@@ -1,0 +1,14 @@
+runtime: nodejs12
+service: default
+instance_class: F1
+
+handlers:
+- url: /
+  static_files: dist/mihirlad/index.html
+  upload: dist/mihirlad/index.html
+  secure: always
+
+- url: /(.*)
+  static_files: dist/mihirlad/\1
+  upload: dist/mihirlad/(.*)
+  secure: always
