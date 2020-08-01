@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(reset.css);
+
+@font-face {
+  font-family: Liberation Mono;
+  src: url(assets/fonts/liberation-mono/LiberationMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: Liberation Mono;
+  font-weight: bold;
+  src: url(assets/fonts/liberation-mono/LiberationMono-Bold.ttf);
+}
+
+@font-face {
+  font-family: Liberation Mono;
+  font-weight: bold;
+  font-style: italic;
+  src: url(assets/fonts/liberation-mono/LiberationMono-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: Liberation Mono;
+  font-style: italic;
+  src: url(assets/fonts/liberation-mono/LiberationMono-Italic.ttf);
+}
+
+:root {
+  --primary-color-1: #2E3532;
+  --primary-color-2: #8B2635;
+  --secondary-color-1: #E0E2DB;
+  --secondary-color-2: #D2D4C8;
+  --secondary-color-3: #D3EFBD;
+}
