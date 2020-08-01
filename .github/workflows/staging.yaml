@@ -1,0 +1,60 @@
+name: Staging CI/CD
+
+env:
+  PROJECT_ID: ${{ secrets.PROJECT_ID }}
+  RUN_REGION: us-central1
+
+on:
+  push:
+    branches: ['develop']
+  pull_request:
+    branches: ['develop']
+
+jobs:
+  build:
+    name: Build angular project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup npm
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - name: Install node dependencies
+        run: npm install
+      - name: Build
+        run: npm run ng build --prod
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: ${{ github.workspace }}/dist/mihirlad
+
+  deploy_staging:
+    name: Deploy to staging
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Download dist artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist/mihirlad
+      - name: Setup gcloud CLI
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.SA_KEY }}
+          project_id: ${{ secrets.PROJECT_ID }}
+      - name: Deploy app-staging.yaml
+        run: gcloud app deploy app-staging.yaml
+      - name: Deploy dispatch.yaml
+        run: gcloud app deploy dispatch.yaml
+
