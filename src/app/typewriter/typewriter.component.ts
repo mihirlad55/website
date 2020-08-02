@@ -49,6 +49,7 @@ export class TypewriterComponent implements OnInit {
   public reset(): void {
     this.stop();
     this.content = "";
+    this.showCursor = false;
   }
 
   typewrite(): void {
@@ -61,6 +62,7 @@ export class TypewriterComponent implements OnInit {
       if (this.onFinished)
         this.onFinished.emit();
       this.running = false;
+      this.showCursor = false;
     }
   }
 
