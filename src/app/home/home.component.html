@@ -1,6 +1,19 @@
 <header>
   <div>
-    <app-typewriter id="intro" #intro delay="75" to_write="Hi, I'm Mihir" (onFinished)="this.occupation.start()"></app-typewriter>
-    <app-typewriter id="occupation" #occupation [initialDelay]="500" delay="75" to_write="Computer Engineer"></app-typewriter>
+    <app-typewriter id="intro" #intro delay="75" to_write="Hi, I'm Mihir" (onFinished)="this.occupation.start()">
+    </app-typewriter>
+    <app-typewriter id="occupation" #occupation [initialDelay]="500" delay="75" to_write="Computer Engineer">
+    </app-typewriter>
   </div>
+  <a href="#skills-section">
+    <img class="down-arrow" src="/assets/icons/expand_more-white-48dp.svg">
+  </a>
 </header>
+
+<section id="skills-section">
+  <h1>// Skills</h1>
+  <div id="skills">
+    <app-skill *ngFor="let skill of this.skills" [skill]="skill">
+    </app-skill>
+  </div>
+</section>
