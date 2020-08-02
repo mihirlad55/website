@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Git",
+    "description": "",
+    "level": 5,
+    "icon_path": "/assets/icons/tools/git.png",
+    "show": true
+  },
+  {
+    "name": "GNU/Linux",
+    "description": "",
+    "level": 5,
+    "icon_path": "/assets/icons/tools/arch.png",
+    "show": true
+  },
+  {
+    "name": "Arduino",
+    "description": "",
+    "level": 5,
+    "icon_path": "/assets/icons/tools/arduino.png",
+    "show": true
+  },
+  {
+    "name": "Raspberry Pi",
+    "description": "",
+    "level": 5,
+    "icon_path": "/assets/icons/tools/rpi.png",
+    "show": true
+  },
+  {
+    "name": "Docker",
+    "description": "",
+    "level": 3,
+    "icon_path": "/assets/icons/tools/docker.png",
+    "show": true
+  },
+  {
+    "name": "Google Cloud Platform",
+    "description": "",
+    "level": 4,
+    "icon_path": "/assets/icons/tools/gcp.png",
+    "show": true
+  },
+  {
+    "name": "Multisim",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/tools/multisim.png",
+    "show": true
+  },
+  {
+    "name": "CI/CD",
+    "description": "",
+    "level": 4,
+    "icon_path": "/assets/icons/tools/cicd.png",
+    "show": true
+  }
+]

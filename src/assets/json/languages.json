@@ -1,0 +1,100 @@
+[
+  {
+    "name": "C++",
+    "description": "",
+    "level": 4,
+    "icon_path": "/assets/icons/languages/cpp.png",
+    "show": true
+  },
+  {
+    "name": "C",
+    "description": "",
+    "level": 5,
+    "icon_path": "/assets/icons/languages/c.png",
+    "show": true
+  },
+  {
+    "name": "C#",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/cs.png",
+    "show": true
+  },
+  {
+    "name": "Java",
+    "description": "",
+    "level": 3,
+    "icon_path": "/assets/icons/languages/java.png",
+    "show": true
+  },
+  {
+    "name": "Visual Basic",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/vb.png",
+    "show": true
+  },
+  {
+    "name": "JavaScript",
+    "description": "",
+    "level": 3,
+    "icon_path": "/assets/icons/languages/js.png",
+    "show": true
+  },
+  {
+    "name": "TypeScript",
+    "description": "",
+    "level": 1,
+    "icon_path": "/assets/icons/languages/ts.png",
+    "show": true
+  },
+  {
+    "name": "HTML",
+    "description": "",
+    "level": 5,
+    "icon_path": "/assets/icons/languages/html.png",
+    "show": true
+  },
+  {
+    "name": "CSS",
+    "description": "",
+    "level": 4,
+    "icon_path": "/assets/icons/languages/css.png",
+    "show": true
+  },
+  {
+    "name": "Python",
+    "description": "",
+    "level": 3,
+    "icon_path": "/assets/icons/languages/python.png",
+    "show": true
+  },
+  {
+    "name": "PHP",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/php.png",
+    "show": true
+  },
+  {
+    "name": "MySQL",
+    "description": "",
+    "level": 3,
+    "icon_path": "/assets/icons/languages/sql.png",
+    "show": true
+  },
+  {
+    "name": "PostgreSQL",
+    "description": "",
+    "level": 3,
+    "icon_path": "/assets/icons/languages/psql.png",
+    "show": true
+  },
+  {
+    "name": "PostgreSQL",
+    "description": "",
+    "level": 3,
+    "icon_path": "/assets/icons/languages/psql.png",
+    "show": true
+  }
+]
