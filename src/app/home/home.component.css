@@ -1,4 +1,4 @@
-section {
+header {
   height: 100vh;
   width: 100%;
   background-color: var(--primary-color-1);
@@ -7,7 +7,7 @@ section {
   align-items: center;
 }
 
-section div {
+header div {
   vertical-align: middle;
   display: flex;
   flex-grow: 1;
