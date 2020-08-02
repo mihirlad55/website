@@ -1,5 +1,7 @@
 dispatch:
-  - url: "mihirlad.com/"
+  - url: "mihirlad.com/*"
     service: default
-  - url: "staging.mihirlad.com/"
+  - url: "www.mihirlad.com/*"
+    service: default
+  - url: "staging.mihirlad.com/*"
     service: staging
