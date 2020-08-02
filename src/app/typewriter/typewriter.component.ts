@@ -12,7 +12,8 @@ export class TypewriterComponent implements OnInit {
   showCursor = false;
 
   @Input() to_write = "";
-  @Input() delay = 0;
+  @Input() initialDelay = 0;
+  @Input() delay = 100;
   @Output() onFinished: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
@@ -23,7 +24,7 @@ export class TypewriterComponent implements OnInit {
   public start(): void {
     setTimeout(() => {
       this.startNow();
-    }, this.delay);
+    }, this.initialDelay);
   }
 
   public startNow(): void {
@@ -55,7 +56,7 @@ export class TypewriterComponent implements OnInit {
       setTimeout(() => {
         this.content += this.type_stack.pop();
         this.typewrite();
-      }, 100)
+      }, this.delay)
     } else {
       if (this.onFinished)
         this.onFinished.emit();

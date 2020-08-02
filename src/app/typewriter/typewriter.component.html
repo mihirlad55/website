@@ -1,1 +1,1 @@
-<div id="typewriter">{{this.content}}<span *ngIf="this.showCursor" class="cursor"></span></div>
+<div id="typewriter">{{this.content}}<span [style.animation-duration]="2 * this.delay + 'ms'" *ngIf="this.showCursor" class="cursor"></span></div>
