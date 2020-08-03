@@ -30,8 +30,10 @@
   --secondary-color-1: #E0E2DB;
   --secondary-color-2: #D2D4C8;
   --secondary-color-3: #D3EFBD;
+  --secondary-color-4: #000000;
 }
 
 html {
   scroll-behavior: smooth;
 }
+

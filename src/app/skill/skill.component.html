@@ -1,6 +1,6 @@
 <div>
-  <h2>{{ this.skill.name }}</h2>
   <img [src]="this.skill.icon_path" [alt]="this.skill.name">
   <p *ngIf="this.skill.description.trim() !== ''">{{ this.skill.description }}</p>
+  <h2>{{ this.skill.name }}</h2>
 </div>
 
