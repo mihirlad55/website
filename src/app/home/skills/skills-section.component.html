@@ -1,12 +1,12 @@
 <section>
-  <div id="container">
-    <div id="skills-heading-container">
+  <div class="container">
+    <div class="heading-container">
       <h1>
         <app-typewriter #skillsHeading delay="75" to_write="// Skills"></app-typewriter>
       </h1>
       <p>Here are some of my skills</p>
     </div>
-    <div id="skills-container">
+    <div class="skills-container">
       <app-skill *ngFor="let skill of this.skills" [skill]="skill">
       </app-skill>
     </div>
