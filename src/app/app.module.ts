@@ -6,9 +6,9 @@ import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {TypewriterComponent} from './typewriter/typewriter.component';
+import {TypewriterComponent} from './shared/typewriter/typewriter.component';
 import {SkillComponent} from './skill/skill.component';
-import { SkillsSectionComponent } from './skills-section/skills-section.component';
+import {SkillsSectionComponent} from './skills-section/skills-section.component';
 
 @NgModule({
   declarations: [

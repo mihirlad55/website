@@ -1,6 +1,6 @@
 import {Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
-import {TypewriterComponent} from '../typewriter/typewriter.component';
-import {SkillsService, Skill} from '../skills.service';
+import {TypewriterComponent} from '../shared/typewriter/typewriter.component';
+import {SkillsService, Skill} from '../services/skills.service';
 
 @Component({
   selector: 'app-skills-section',

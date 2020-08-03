@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
-import {TypewriterComponent} from '../typewriter/typewriter.component';
+import {TypewriterComponent} from '../shared/typewriter/typewriter.component';
 
 @Component({
   selector: 'app-home',
