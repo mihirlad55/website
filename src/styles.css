@@ -1,5 +1,6 @@
 @import url(reset.css);
 @import url(assets/fonts/liberation-mono/liberation-mono.css);
+@import url(assets/fonts/source-sans-pro/source-sans-pro.css);
 
 :root {
   --primary-color-1: #2E3532;
