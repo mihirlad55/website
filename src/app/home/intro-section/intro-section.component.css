@@ -4,7 +4,7 @@ section {
 }
 
 .container {
-  max-width: 900px;
+  max-width: 1300px;
   margin: auto;
 }
 
@@ -42,17 +42,18 @@ img {
 .content .parallax-wrapper {
   display: block;
   overflow: hidden;
-  min-width: 400px;
-  height: 600px;
+  min-width: 500px;
+  height: 700px;
 }
 
 .content .description {
-  font: 1.2em 'Liberation Mono';
+  font: 300 1.5em 'Source Sans Pro';
+  text-align: justify;
   color: var(--secondary-color-1);
   padding: 10px 40px;
 }
 
 .content .description p {
   margin-bottom: 10px;
-  text-indent: 20px;
+  text-indent: 30px;
 }
