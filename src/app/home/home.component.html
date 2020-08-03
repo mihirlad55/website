@@ -1,6 +1,5 @@
-<section>
-  <div>
-    <app-typewriter id="intro" #intro to_write="Hi, I'm Mihir" (onFinished)="this.occupation.start()"></app-typewriter>
-    <app-typewriter id="occupation" #occupation delay=500 to_write="A Computer Engineer"></app-typewriter>
-  </div>
-</section>
+<app-header #header scrollHref="#intro-section"></app-header>
+<ng-container *ngIf="this.header.isHeaderLoaded">
+  <app-intro-section id="intro-section"></app-intro-section>
+  <app-skills-section></app-skills-section>
+</ng-container>

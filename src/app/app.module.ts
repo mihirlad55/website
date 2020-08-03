@@ -1,22 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NgModule} from '@angular/core';
+import {HttpClientModule} from '@angular/common/http'
+import {AppRoutingModule} from './app-routing.module';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { TypewriterComponent } from './typewriter/typewriter.component';
+import {HomeModule} from './home/home.module';
+
+import {AppComponent} from './app.component';
+import {TypewriterComponent} from './shared/typewriter/typewriter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    TypewriterComponent
+    TypewriterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
+  ],
+  exports: [
+    TypewriterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

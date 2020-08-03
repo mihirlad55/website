@@ -1,0 +1,24 @@
+@font-face {
+  font-family: Liberation Mono;
+  font-style: italic;
+  src: url(LiberationMono-Italic.ttf);
+}
+
+@font-face {
+  font-family: Liberation Mono;
+  src: url(LiberationMono-Regular.ttf);
+}
+
+@font-face {
+  font-family: Liberation Mono;
+  font-weight: bold;
+  src: url(LiberationMono-Bold.ttf);
+}
+
+@font-face {
+  font-family: Liberation Mono;
+  font-weight: bold;
+  font-style: italic;
+  src: url(LiberationMono-BoldItalic.ttf);
+}
+

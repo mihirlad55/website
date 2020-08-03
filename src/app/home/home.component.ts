@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {TypewriterComponent} from '../typewriter/typewriter.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {HeaderComponent} from './header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +7,11 @@ import {TypewriterComponent} from '../typewriter/typewriter.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('intro') intro: TypewriterComponent;
-  @ViewChild('occupation') occupation: TypewriterComponent;
+  @ViewChild('header') header: HeaderComponent;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  ngAfterViewInit(): void {
-    this.intro.start();
   }
 
 }
