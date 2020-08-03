@@ -1,28 +1,5 @@
 @import url(reset.css);
-
-@font-face {
-  font-family: Liberation Mono;
-  src: url(assets/fonts/liberation-mono/LiberationMono-Regular.ttf);
-}
-
-@font-face {
-  font-family: Liberation Mono;
-  font-weight: bold;
-  src: url(assets/fonts/liberation-mono/LiberationMono-Bold.ttf);
-}
-
-@font-face {
-  font-family: Liberation Mono;
-  font-weight: bold;
-  font-style: italic;
-  src: url(assets/fonts/liberation-mono/LiberationMono-BoldItalic.ttf);
-}
-
-@font-face {
-  font-family: Liberation Mono;
-  font-style: italic;
-  src: url(assets/fonts/liberation-mono/LiberationMono-Italic.ttf);
-}
+@import url(assets/fonts/liberation-mono/liberation-mono.css);
 
 :root {
   --primary-color-1: #2E3532;
