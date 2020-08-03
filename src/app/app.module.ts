@@ -4,25 +4,24 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 import {AppRoutingModule} from './app-routing.module';
 
+import {HomeModule} from './home/home.module';
+
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
 import {TypewriterComponent} from './shared/typewriter/typewriter.component';
-import {SkillComponent} from './skill/skill.component';
-import {SkillsSectionComponent} from './skills-section/skills-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     TypewriterComponent,
-    SkillComponent,
-    SkillsSectionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule
+  ],
+  exports: [
+    TypewriterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
