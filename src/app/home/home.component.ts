@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {TypewriterComponent} from '../typewriter/typewriter.component';
-import {SkillsService, Skill} from '../skills.service';
 
 @Component({
   selector: 'app-home',
@@ -19,15 +18,11 @@ export class HomeComponent implements OnInit {
   @ViewChild('intro') intro: TypewriterComponent;
   @ViewChild('occupation') occupation: TypewriterComponent;
 
-  skills: Skill[];
   isHomeLoaded = false;
 
-  constructor(private skillsService: SkillsService) {}
+  constructor() {}
 
   ngOnInit(): void {
-    this.skillsService.getSkills().subscribe(skills => {
-      this.skills = skills;
-    });
   }
 
   ngAfterViewInit(): void {
