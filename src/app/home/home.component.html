@@ -1,2 +1,2 @@
-<app-header></app-header>
-<app-skills-section></app-skills-section>
+<app-header #header scrollHref="#skills-section"></app-header>
+<app-skills-section *ngIf="this.header.isHeaderLoaded" id="skills-section"></app-skills-section>

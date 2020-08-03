@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, Input} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {TypewriterComponent} from '../../shared/typewriter/typewriter.component';
 
@@ -17,6 +17,7 @@ import {TypewriterComponent} from '../../shared/typewriter/typewriter.component'
 export class HeaderComponent implements OnInit {
   @ViewChild('intro') intro: TypewriterComponent;
   @ViewChild('occupation') occupation: TypewriterComponent;
+  @Input() scrollHref = "";
 
   isHeaderLoaded = false;
 
