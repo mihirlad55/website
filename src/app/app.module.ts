@@ -4,8 +4,6 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 import {AppRoutingModule} from './app-routing.module';
 
-import {HomeModule} from './home/home.module';
-
 import {AppComponent} from './app.component';
 import {TypewriterComponent} from './shared/typewriter/typewriter.component';
 
