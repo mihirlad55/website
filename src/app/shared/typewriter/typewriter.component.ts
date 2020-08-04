@@ -41,9 +41,16 @@ export class TypewriterComponent implements OnInit, AfterViewInit {
   }
 
   public start(): void {
-    setTimeout(() => {
-      this.startNow();
-    }, this.initialDelay);
+    if (!this.isRunning) {
+      this.isRunning = true;
+      setTimeout(() => {
+        this.showCursor = true;
+        let new_stack = this.to_write.split('').reverse();
+        this.type_stack = [...new_stack];
+        this.typewrite();
+      }, this.initialDelay);
+    } else
+      throw `Typewriter with content ${this.to_write}is already running`;
   }
 
   public startNow(): void {
