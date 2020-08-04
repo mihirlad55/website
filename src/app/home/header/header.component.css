@@ -70,14 +70,6 @@ ul li a img {
   height: 40px;
 }
 
-header .overlay {
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  z-index: 1;
-  pointer-events: none;
-}
-
 @media screen and (max-width: 600px) {
   #intro {
     font-size: 6em;

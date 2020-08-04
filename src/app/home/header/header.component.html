@@ -24,8 +24,6 @@
   <a class="down-arrow-link" [href]="this.scrollHref">
     <img [@fadeIn]="isHeaderLoaded" class="down-arrow" src="/assets/icons/expand_more-white-48dp.svg">
   </a>
-  <app-anchor-preview [previewPath]="this.previewPath" [@slideDown]="this.isPreviewVisible">
+  <app-anchor-preview [previewPath]="this.previewPath" [isPreviewVisible]="this.isPreviewVisible">
   </app-anchor-preview>
-  <div class='overlay' [style.display]="this.isPreviewVisible ? 'block' : 'none'" [@fadeInFast]="this.isPreviewVisible"
-    [@darken]="this.isPreviewVisible"></div>
 </header>
