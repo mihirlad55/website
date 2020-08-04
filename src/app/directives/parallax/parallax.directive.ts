@@ -1,5 +1,6 @@
-import {AfterViewInit} from '@angular/core'
-import {Directive, Input, ElementRef, HostListener} from '@angular/core';
+import {
+  Directive, Input, ElementRef, HostListener, AfterViewInit
+} from '@angular/core';
 
 @Directive({
   selector: '[appParallax]'
@@ -9,7 +10,7 @@ export class ParallaxDirective implements AfterViewInit {
 
   initialTop = 0;
 
-  constructor(private elRef: ElementRef) { }
+  constructor(private elRef: ElementRef) {}
 
   ngAfterViewInit() {
     this.initialTop = this.elRef.nativeElement.getBoundingClientRect().top;
