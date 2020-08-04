@@ -8,21 +8,33 @@ import {PreviewableDirective} from '../../directives/previewable/previewable.dir
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
   animations: [
-    trigger('headerLoaded', [
-      state('hidden', style({opacity: 0})),
-      state('shown', style({opacity: 1})),
-      transition('hidden => shown', [animate('1s ease')])
+    trigger('fadeIn', [
+      state('false', style({opacity: 0})),
+      state('true', style({opacity: 1})),
+      transition('false <=> true', [animate('1s ease-in')])
+    ]),
+    trigger('fadeInFast', [
+      state('false', style({opacity: 0})),
+      state('true', style({opacity: 1})),
+      transition('false <=> true', [animate('0.3s ease-in')]),
+      transition('true => false', [animate('0.2s ease-in')])
     ]),
     trigger('fadeDown', [
-      state('hidden', style({opacity: 0, transform: 'translateY(-50px)'})),
-      state('shown', style({opacity: 1, transform: 'translateY(0px)'})),
-      transition('hidden => shown', [animate('1s ease')])
+      state('false', style({opacity: 0, transform: 'translateY(-50px)', 'z-index': -2})),
+      state('true', style({opacity: 1, transform: 'translateY(0px)', 'z-index': 'initial'})),
+      transition('false <=> true', [animate('1s ease-in')])
     ]),
-    trigger('slideUp', [
-      state('hidden', style({transform: 'translateY(100%)'})),
-      state('shown', style({transform: 'translateY(0)'})),
-      transition('hidden => shown', [animate('0.3s ease-in')]),
-      transition('shown => hidden', [animate('0.2s ease-in')])
+    trigger('slideDown', [
+      state('false', style({transform: 'translateY(-100%)'})),
+      state('true', style({transform: 'translateY(0)'})),
+      transition('false => true', [animate('0.3s ease-in')]),
+      transition('true => false', [animate('0.2s ease-in')])
+    ]),
+    trigger('darken', [
+      state('false', style({'background-color': '#00000000'})),
+      state('true', style({'background-color': '#00000040'})),
+      transition('false => true', [animate('0.3s ease-in')]),
+      transition('true => false', [animate('0.2s ease-in')])
     ])
   ]
 })
@@ -31,17 +43,16 @@ export class HeaderComponent implements OnInit {
   @Input() scrollHref = "";
 
   isHeaderLoaded = false;
-  hoveredAnchor = null;
   previewPath = '';
-  showPreview = false;
+  isPreviewVisible = false;
 
-  onHover(previewPath): void {
+  showPreview(previewPath: string = ''): void {
     this.previewPath = previewPath;
-    this.showPreview = true;
+    this.isPreviewVisible = true;
   }
 
-  onMouseLeave(): void {
-    this.showPreview = false;
+  hidePreview(): void {
+    this.isPreviewVisible = false;
   }
 
   constructor(private renderer: Renderer2) {}
