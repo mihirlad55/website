@@ -1,5 +1,5 @@
 import {Component, OnInit, Input} from '@angular/core';
-import {Skill} from '../../../services/skills.service';
+import {Skill} from '../../../services/skills/skills.service';
 
 @Component({
   selector: 'app-skill',

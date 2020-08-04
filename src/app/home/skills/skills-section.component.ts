@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {SkillsService, Skill} from '../../services/skills.service';
+import {SkillsService, Skill} from '../../services/skills/skills.service';
 
 @Component({
   selector: 'app-skills-section',
