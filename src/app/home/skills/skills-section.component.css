@@ -18,11 +18,13 @@ section {
   display: block;
   font: bold 4em 'Liberation Mono';
   color: var(--secondary-color-1);
+  transition: ease-in 1s;
 }
 
 .heading-container p {
   font: 1.2em 'Liberation Mono';
   color: var(--secondary-color-1);
+  transition: ease-in 1s;
 }
 
 .container .skills-container {
@@ -42,7 +44,7 @@ section {
   border: solid 1px var(--secondary-color-1);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .heading-container h1 {
     font-size: 2em;
   }

@@ -21,6 +21,7 @@ header div {
   font: bold 8em 'Liberation Mono';
   text-align: center;
   color: var(--secondary-color-1);
+  transition: ease-in 1s;
 }
 
 #occupation {
@@ -28,6 +29,7 @@ header div {
   font: bold 4em 'Liberation Mono';
   text-align: center;
   color: var(--secondary-color-1);
+  transition: ease-in 1s;
 }
 
 .down-arrow-link {
@@ -41,7 +43,7 @@ header div {
   opacity: 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   #intro {
     font-size: 6em;
   }
