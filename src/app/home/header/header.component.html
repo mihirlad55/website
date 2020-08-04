@@ -8,10 +8,13 @@
     </app-typewriter>
   </div>
   <ul [@fadeDown]="isHeaderLoaded ? 'shown' : 'hidden'">
-    <li><a href="mailto:contact@mihirlad.com"><img alt="Email" src="/assets/icons/email.png"></a></li>
-    <li><a href="https://linkedin.com/in/mihirlad55"><img alt="LinkedIn" src="/assets/icons/linkedin.png"></a></li>
-    <li><a href="https://github.com/mihirlad55"><img alt="GitHub" src="/assets/icons/github.png"></a></li>
-    <li><a href="https://gitlab.com/mihirlad55"><img alt="GitLab" src="/assets/icons/gitlab.png"></a></li>
+    <li><a title="Email Me" href="mailto:contact@mihirlad.com"><img alt="Email" src="/assets/icons/email.png"></a></li>
+    <li><a title="My LinkedIn Profile" href="https://linkedin.com/in/mihirlad55"><img alt="LinkedIn"
+          src="/assets/icons/linkedin.png"></a></li>
+    <li><a title="My GitHub Profile" href="https://github.com/mihirlad55"><img alt="GitHub"
+          src="/assets/icons/github.png"></a></li>
+    <li><a title="My GitLab Profile" href="https://gitlab.com/mihirlad55"><img alt="GitLab"
+          src="/assets/icons/gitlab.png"></a></li>
   </ul>
   <a class="down-arrow-link" [href]="this.scrollHref">
     <img [@headerLoaded]="isHeaderLoaded ? 'shown' : 'hidden'" class="down-arrow"
