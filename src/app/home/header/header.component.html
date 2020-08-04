@@ -26,4 +26,6 @@
   </a>
   <app-anchor-preview [previewPath]="this.previewPath" [@slideDown]="this.isPreviewVisible">
   </app-anchor-preview>
+  <div class='overlay' [style.display]="this.isPreviewVisible ? 'block' : 'none'" [@fadeInFast]="this.isPreviewVisible"
+    [@darken]="this.isPreviewVisible"></div>
 </header>

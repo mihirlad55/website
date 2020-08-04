@@ -7,16 +7,10 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
   templateUrl: './anchor-preview.component.html',
   styleUrls: ['./anchor-preview.component.css'],
   animations: [
-    trigger('slideUp', [
-      state('hidden', style({display: 'none'})),
-      state('shown', style({display: 'initial', bottom: 0, top: 0})),
-      transition('hidden => shown', [animate('1.5s ease-in')])
-    ])
   ]
 })
 export class AnchorPreviewComponent implements OnInit, AfterViewInit {
   @Input() previewPath: string;
-  @Input() previewAlt: string;
 
   constructor(private elRef: ElementRef) {}
 
@@ -25,6 +19,6 @@ export class AnchorPreviewComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     const elHeight = this.elRef.nativeElement.getBoundingClientRect().height;
-    this.elRef.nativeElement.bottom = window.innerHeight + elHeight;
+    this.elRef.nativeElement.style.top = -elHeight;
   }
 }
