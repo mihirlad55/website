@@ -1,12 +1,20 @@
 <header>
   <div>
-    <app-typewriter id="intro" autostart="true" delay="75" to_write="Hi, I'm Mihir" (onFinished)="this.occupation.start()">
+    <app-typewriter id="intro" autostart="true" delay="75" to_write="Hi, I'm Mihir"
+      (onFinished)="this.occupation.start()">
     </app-typewriter>
     <app-typewriter id="occupation" #occupation [initialDelay]="500" delay="75" to_write="Computer Engineer"
       (onFinished)="this.isHeaderLoaded = true">
     </app-typewriter>
   </div>
+  <ul [@fadeDown]="isHeaderLoaded ? 'shown' : 'hidden'">
+    <li><a href="mailto:contact@mihirlad.com"><img alt="Email" src="/assets/icons/email.png"></a></li>
+    <li><a href="https://linkedin.com/in/mihirlad55"><img alt="LinkedIn" src="/assets/icons/linkedin.png"></a></li>
+    <li><a href="https://github.com/mihirlad55"><img alt="GitHub" src="/assets/icons/github.png"></a></li>
+    <li><a href="https://gitlab.com/mihirlad55"><img alt="GitLab" src="/assets/icons/gitlab.png"></a></li>
+  </ul>
   <a class="down-arrow-link" [href]="this.scrollHref">
-    <img [@headerLoaded]="isHeaderLoaded ? 'shown' : 'hidden'" class="down-arrow" src="/assets/icons/expand_more-white-48dp.svg">
+    <img [@headerLoaded]="isHeaderLoaded ? 'shown' : 'hidden'" class="down-arrow"
+      src="/assets/icons/expand_more-white-48dp.svg">
   </a>
 </header>

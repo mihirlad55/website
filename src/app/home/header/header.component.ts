@@ -11,6 +11,11 @@ import {TypewriterComponent} from '../../shared/typewriter/typewriter.component'
       state('hidden', style({opacity: 0})),
       state('shown', style({opacity: 1})),
       transition('hidden => shown', [animate('1s ease')])
+    ]),
+    trigger('fadeDown', [
+      state('hidden', style({opacity: 0, transform: 'translateY(-50px)'})),
+      state('shown', style({opacity: 1, transform: 'translateY(0px)'})),
+      transition('hidden => shown', [animate('1s ease')])
     ])
   ]
 })
