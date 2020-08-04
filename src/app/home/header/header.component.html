@@ -4,7 +4,7 @@
       (onFinished)="this.occupation.start()">
     </app-typewriter>
     <app-typewriter id="occupation" #occupation [initialDelay]="500" delay="75" to_write="Computer Engineer"
-      (onFinished)="this.isHeaderLoaded = true">
+      (onFinished)="doneLoading()">
     </app-typewriter>
   </div>
   <ul [@fadeDown]="isHeaderLoaded ? 'shown' : 'hidden'">

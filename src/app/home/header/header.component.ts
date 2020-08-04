@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, Input} from '@angular/core';
+import {Component, OnInit, ViewChild, Input, Renderer2} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {TypewriterComponent} from '../../shared/typewriter/typewriter.component';
 import {PreviewableDirective} from '../../directives/previewable/previewable.directive';
@@ -44,9 +44,11 @@ export class HeaderComponent implements OnInit {
     this.showPreview = false;
   }
 
-  constructor() {}
+  constructor(private renderer: Renderer2) {}
 
   ngOnInit(): void {
+    if (window.scrollY == 0)
+      this.renderer.addClass(document.body, 'no-scroll');
   }
 
   ngAfterViewInit(): void {
@@ -54,5 +56,6 @@ export class HeaderComponent implements OnInit {
 
   doneLoading(): void {
     this.isHeaderLoaded = true;
+    this.renderer.removeClass(document.body, 'no-scroll');
   }
 }
