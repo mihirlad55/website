@@ -30,8 +30,14 @@ header div {
   color: var(--secondary-color-1);
 }
 
+.down-arrow-link {
+  width: 100%;
+}
+
 .down-arrow {
-  width: 100px;
+  display: block;
+  height: 100px;
+  width: 100%;
   opacity: 0;
 }
 
