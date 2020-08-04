@@ -41,3 +41,12 @@ header div {
   opacity: 0;
 }
 
+@media screen and (max-width: 768px) {
+  #intro {
+    font-size: 6em;
+  }
+
+  #occupation {
+    font-size: 2em;
+  }
+}
