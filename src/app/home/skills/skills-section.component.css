@@ -41,3 +41,13 @@ section {
   max-width: 150px;
   border: solid 1px var(--secondary-color-1);
 }
+
+@media screen and (max-width: 768px) {
+  .heading-container h1 {
+    font-size: 2em;
+  }
+
+  .heading-container p {
+    font-size: 1em;
+  }
+}
