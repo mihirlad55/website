@@ -8,16 +8,24 @@
     </app-typewriter>
   </div>
   <ul [@fadeDown]="isHeaderLoaded ? 'shown' : 'hidden'">
-    <li><a title="Email Me" href="mailto:contact@mihirlad.com"><img alt="Email" src="/assets/icons/email.png"></a></li>
-    <li><a title="My LinkedIn Profile" href="https://linkedin.com/in/mihirlad55"><img alt="LinkedIn"
+    <li><a #email appPreviewable previewPath="/assets/icons/email.png"
+        (mouseover)="onHover('/assets/previews/email.png')" (mouseout)="onMouseLeave()" title="Email Me"
+        href="mailto:contact@mihirlad.com"><img alt="Email" src="/assets/icons/email.png"></a></li>
+    <li><a title="My LinkedIn Profile" href="https://linkedin.com/in/mihirlad55"
+        (mouseover)="onHover('/assets/previews/linkedin.png')" (mouseout)="onMouseLeave()"><img alt="LinkedIn"
           src="/assets/icons/linkedin.png"></a></li>
-    <li><a title="My GitHub Profile" href="https://github.com/mihirlad55"><img alt="GitHub"
+    <li><a title="My GitHub Profile" href="https://github.com/mihirlad55"
+        (mouseover)="onHover('/assets/previews/github.png')" (mouseout)="onMouseLeave()"><img alt="GitHub"
           src="/assets/icons/github.png"></a></li>
-    <li><a title="My GitLab Profile" href="https://gitlab.com/mihirlad55"><img alt="GitLab"
+    <li><a title="My GitLab Profile" href="https://gitlab.com/mihirlad55"
+        (mouseover)="onHover('/assets/previews/gitlab.png')" (mouseout)="onMouseLeave()"><img alt="GitLab"
           src="/assets/icons/gitlab.png"></a></li>
   </ul>
   <a class="down-arrow-link" [href]="this.scrollHref">
     <img [@headerLoaded]="isHeaderLoaded ? 'shown' : 'hidden'" class="down-arrow"
       src="/assets/icons/expand_more-white-48dp.svg">
   </a>
+  <app-anchor-preview *ngIf="this.previewPath" [previewPath]="this.previewPath"
+    [@slideUp]="this.showPreview ? 'shown' : 'hidden'">
+  </app-anchor-preview>
 </header>
