@@ -15,3 +15,7 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  color: var(--secondary-color-3);
+}
+
