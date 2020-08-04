@@ -35,7 +35,7 @@ export class TypewriterComponent implements OnInit, AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event) {
-    if (!this.isDone && this.autostart &&
+    if (!this.isDone && !this.isRunning && this.autostart &&
       window.scrollY + window.innerHeight * 0.9 > this.initialTop)
       this.start();
   }
