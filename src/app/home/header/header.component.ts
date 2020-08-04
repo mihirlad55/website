@@ -15,7 +15,6 @@ import {TypewriterComponent} from '../../shared/typewriter/typewriter.component'
   ]
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('intro') intro: TypewriterComponent;
   @ViewChild('occupation') occupation: TypewriterComponent;
   @Input() scrollHref = "";
 
@@ -27,7 +26,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngAfterViewInit(): void {
-    this.intro.start();
   }
 
   doneLoading(): void {

@@ -1,24 +1,43 @@
-import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import {
+  Component, OnInit, AfterViewInit, Input, Output, EventEmitter, ElementRef,
+  HostListener
+} from '@angular/core';
 
 @Component({
   selector: 'app-typewriter',
   templateUrl: './typewriter.component.html',
   styleUrls: ['./typewriter.component.css']
 })
-export class TypewriterComponent implements OnInit {
+export class TypewriterComponent implements OnInit, AfterViewInit {
   type_stack = [];
   content = "";
-  running = false;
+  isRunning = false;
+  isDone = false;
   showCursor = false;
+  initialTop = 0;
 
   @Input() to_write = "";
   @Input() initialDelay = 0;
   @Input() delay = 100;
+  @Input() autostart = false;
   @Output() onFinished: EventEmitter<any> = new EventEmitter();
 
-  constructor() {}
+  constructor(private elRef: ElementRef) {}
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+    this.initialTop = this.elRef.nativeElement.getBoundingClientRect().top;
+    if (this.autostart)
+      this.onWindowScroll(null);
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event) {
+    if (!this.isDone && this.autostart &&
+      window.scrollY + window.innerHeight * 0.9 > this.initialTop)
+      this.start();
   }
 
   public start(): void {
@@ -28,20 +47,20 @@ export class TypewriterComponent implements OnInit {
   }
 
   public startNow(): void {
-    if (!this.running) {
+    if (!this.isRunning) {
       let new_stack = this.to_write.split('').reverse();
       this.showCursor = true;
       this.type_stack = [...new_stack];
-      this.running = true;
+      this.isRunning = true;
       this.typewrite();
     } else
       throw `Typewriter with content ${this.to_write}is already running`;
   }
 
   public stop(): void {
-    if (this.running) {
+    if (this.isRunning) {
       this.type_stack = [];
-      this.running = false;
+      this.isRunning = false;
     } else
       throw `Typewriter with content ${this.to_write}is already stopped`;
   }
@@ -50,6 +69,7 @@ export class TypewriterComponent implements OnInit {
     this.stop();
     this.content = "";
     this.showCursor = false;
+    this.isDone = false;
   }
 
   typewrite(): void {
@@ -61,7 +81,8 @@ export class TypewriterComponent implements OnInit {
     } else {
       if (this.onFinished)
         this.onFinished.emit();
-      this.running = false;
+      this.isRunning = false;
+      this.isDone = true;
       this.showCursor = false;
     }
   }

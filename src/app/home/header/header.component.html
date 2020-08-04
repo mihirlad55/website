@@ -1,6 +1,6 @@
 <header>
   <div>
-    <app-typewriter id="intro" #intro delay="75" to_write="Hi, I'm Mihir" (onFinished)="this.occupation.start()">
+    <app-typewriter id="intro" autostart="true" delay="75" to_write="Hi, I'm Mihir" (onFinished)="this.occupation.start()">
     </app-typewriter>
     <app-typewriter id="occupation" #occupation [initialDelay]="500" delay="75" to_write="Computer Engineer"
       (onFinished)="this.isHeaderLoaded = true">
