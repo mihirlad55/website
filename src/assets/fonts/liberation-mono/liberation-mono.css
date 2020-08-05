@@ -2,17 +2,20 @@
   font-family: Liberation Mono;
   font-style: italic;
   src: url(LiberationMono-Italic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Liberation Mono;
   src: url(LiberationMono-Regular.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Liberation Mono;
   font-weight: bold;
   src: url(LiberationMono-Bold.ttf);
+  font-display: swap;
 }
 
 @font-face {
@@ -20,5 +23,6 @@
   font-weight: bold;
   font-style: italic;
   src: url(LiberationMono-BoldItalic.ttf);
+  font-display: swap;
 }
 

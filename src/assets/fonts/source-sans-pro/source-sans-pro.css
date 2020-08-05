@@ -1,67 +1,78 @@
 @font-face {
   font-family: Source Sans Pro;
   font-weight: bold;
-  src: url(SourceSansPro-Bold.ttf)
+  src: url(SourceSansPro-Bold.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-variant: Black;
-  src: url(SourceSansPro-Black.ttf)
+  src: url(SourceSansPro-Black.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-weight: 300;
-  src: url(SourceSansPro-Light.ttf)
+  src: url(SourceSansPro-Light.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-style: italic;
-  src: url(SourceSansPro-Italic.ttf)
+  src: url(SourceSansPro-Italic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(SourceSansPro-Regular.ttf)
+  src: url(SourceSansPro-Regular.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-weight: 500;
-  src: url(SourceSansPro-SemiBold.ttf)
+  src: url(SourceSansPro-SemiBold.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-weight: bold;
   font-style: italic;
-  src: url(SourceSansPro-BoldItalic.ttf)
+  src: url(SourceSansPro-BoldItalic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-weight: 200;
-  src: url(SourceSansPro-ExtraLight.ttf)
+  src: url(SourceSansPro-ExtraLight.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-variant: Black;
   font-style: italic;
-  src: url(SourceSansPro-BlackItalic.ttf)
+  src: url(SourceSansPro-BlackItalic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-style: italic;
   font-weight: 500;
-  src: url(SourceSansPro-SemiBoldItalic.ttf)
+  src: url(SourceSansPro-SemiBoldItalic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-style: ExtraLightItalic;
-  src: url(SourceSansPro-ExtraLightItalic.ttf)
+  src: url(SourceSansPro-ExtraLightItalic.ttf);
+  font-display: swap;
 }
