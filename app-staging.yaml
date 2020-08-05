@@ -2,6 +2,8 @@ runtime: nodejs12
 service: staging
 instance_class: F1
 
+default_expiration: "180d"
+
 handlers:
 - url: /
   static_files: dist/mihirlad/index.html
