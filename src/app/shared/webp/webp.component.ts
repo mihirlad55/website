@@ -21,9 +21,15 @@ export class WebpComponent implements OnInit, AfterContentChecked {
 
   ngAfterContentChecked(): void {
     if (this.name !== '') {
-      this.webp = `${imgPath}/${this.type}/${this.name}.webp`;
-      this.jpg = `${imgPath}/${this.type}/${this.name}.jpg`;
-      this.png = `${imgPath}/${this.type}/${this.name}.png`;
+      if (this.type !== '') {
+        this.webp = `${imgPath}/${this.type}/${this.name}.webp`;
+        this.jpg = `${imgPath}/${this.type}/${this.name}.jpg`;
+        this.png = `${imgPath}/${this.type}/${this.name}.png`;
+      } else {
+        this.webp = `${imgPath}/${this.name}.webp`;
+        this.jpg = `${imgPath}/${this.name}.jpg`;
+        this.png = `${imgPath}/${this.name}.png`;
+      }
     }
   }
 }
