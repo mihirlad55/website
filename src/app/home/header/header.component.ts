@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
 
   showPreview(previewable: PreviewableDirective): void {
     this.previewable = previewable;
-    console.log(previewable);
     this.isPreviewVisible = true;
   }
 
