@@ -1,20 +1,20 @@
 @font-face {
   font-family: Liberation Mono;
   font-style: italic;
-  src: url(LiberationMono-Italic.ttf);
+  src: url(/assets/fonts/liberation-mono/LiberationMono-Italic.ttf);
   font-display: swap;
 }
 
 @font-face {
   font-family: Liberation Mono;
-  src: url(LiberationMono-Regular.ttf);
+  src: url(/assets/fonts/liberation-mono/LiberationMono-Regular.ttf);
   font-display: swap;
 }
 
 @font-face {
   font-family: Liberation Mono;
   font-weight: bold;
-  src: url(LiberationMono-Bold.ttf);
+  src: url(/assets/fonts/liberation-mono/LiberationMono-Bold.ttf);
   font-display: swap;
 }
 
@@ -22,7 +22,7 @@
   font-family: Liberation Mono;
   font-weight: bold;
   font-style: italic;
-  src: url(LiberationMono-BoldItalic.ttf);
+  src: url(/assets/fonts/liberation-mono/LiberationMono-BoldItalic.ttf);
   font-display: swap;
 }
 
