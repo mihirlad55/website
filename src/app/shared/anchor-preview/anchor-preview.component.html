@@ -1,3 +1,3 @@
-<img #preview [src]="this.previewable ? this.previewable.previewPath : ''" [@slideDown]="this.isPreviewVisible">
+<app-webp #preview type="previews" [name]="this.previewable ? this.previewable.name : ''" [@slideDown]="this.isPreviewVisible"></app-webp>
 <div class='overlay' [style.display]="this.isPreviewVisible ? 'block' : 'none'" [@fadeIn]="this.isPreviewVisible"
   [@darken]="this.isPreviewVisible"></div>

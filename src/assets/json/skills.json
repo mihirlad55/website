@@ -2,37 +2,37 @@
   {
     "name": "Leadership",
     "description": "",
-    "icon_path": "/assets/icons/skills/leadership.png",
+    "iconName": "leadership",
     "show": true
   },
   {
     "name": "Project Management",
     "description": "",
-    "icon_path": "/assets/icons/skills/project-management.png",
+    "iconName": "project-management",
     "show": true
   },
   {
     "name": "Circuit Design",
     "description": "",
-    "icon_path": "/assets/icons/skills/circuit-design.png",
+    "iconName": "circuit-design",
     "show": true
   },
   {
     "name": "Schematic Capture",
     "description": "",
-    "icon_path": "/assets/icons/skills/schematic-capture.png",
+    "iconName": "schematic-capture",
     "show": true
   },
   {
     "name": "Rapid Prototyping",
     "description": "",
-    "icon_path": "/assets/icons/skills/rapid-prototyping.png",
+    "iconName": "rapid-prototyping",
     "show": true
   },
   {
     "name": "Control Systems",
     "description": "",
-    "icon_path": "/assets/icons/skills/control-systems.png",
+    "iconName": "control-systems",
     "show": true
   }
 ]

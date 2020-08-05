@@ -39,7 +39,9 @@ export class AnchorPreviewComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const elHeight = this.previewEl.nativeElement.getBoundingClientRect().height;
-    this.previewEl.nativeElement.style.top = -elHeight;
+    if (this.previewEl.nativeElement) {
+      const elHeight = this.previewEl.nativeElement.getBoundingClientRect().height;
+      this.previewEl.nativeElement.style.top = -elHeight;
+    }
   }
 }

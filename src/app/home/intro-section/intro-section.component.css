@@ -27,9 +27,9 @@ section {
   transition: ease-in 1s;
 }
 
-img {
+app-webp {
   width: 100%;
-  height: 125%;
+  height: 110%;
   object-fit: cover;
   position: relative;
 }

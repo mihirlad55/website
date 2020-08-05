@@ -9,20 +9,24 @@
   </div>
   <ul [@fadeDown]="isHeaderLoaded">
     <li><a appPreviewable #email="appPreviewable" previewName="email" (mouseover)="showPreview(email)"
-        (mouseout)="hidePreview()" title="Email Me" href="mailto:contact@mihirlad.com"><img alt="Email"
-          src="/assets/icons/email.png"></a></li>
+        (mouseout)="hidePreview()" title="Email Me" href="mailto:contact@mihirlad.com">
+        <app-webp alt="Email" type="links" [name]="email.previewName"></app-webp>
+      </a></li>
     <li><a appPreviewable #linkedin="appPreviewable" previewName="linkedin" title="My LinkedIn Profile"
-        href="https://linkedin.com/in/mihirlad55" (mouseover)="showPreview(linkedin)" (mouseout)="hidePreview()"><img
-          alt="LinkedIn" src="/assets/icons/linkedin.png"></a></li>
+        href="https://linkedin.com/in/mihirlad55" (mouseover)="showPreview(linkedin)" (mouseout)="hidePreview()">
+        <app-webp type="links" alt="LinkedIn" [name]="linkedin.previewName"></app-webp>
+      </a></li>
     <li><a appPreviewable #github="appPreviewable" previewName="github" title="My GitHub Profile"
-        href="https://github.com/mihirlad55" (mouseover)="showPreview(github)" (mouseout)="hidePreview()"><img
-          alt="GitHub" src="/assets/icons/github.png"></a></li>
+        href="https://github.com/mihirlad55" (mouseover)="showPreview(github)" (mouseout)="hidePreview()">
+        <app-webp type="links" alt="GitHub" [name]="github.previewName"></app-webp>
+      </a></li>
     <li><a appPreviewable #gitlab="appPreviewable" previewName="gitlab" title="My GitLab Profile"
-        href="https://gitlab.com/mihirlad55" (mouseover)="showPreview(gitlab)" (mouseout)="hidePreview()"><img
-          alt="GitLab" src="/assets/icons/gitlab.png"></a></li>
+        href="https://gitlab.com/mihirlad55" (mouseover)="showPreview(gitlab)" (mouseout)="hidePreview()">
+        <app-webp type="links" alt="GitLab" [name]="gitlab.previewName"></app-webp>
+      </a></li>
   </ul>
   <a class="down-arrow-link" [href]="this.scrollHref">
-    <img [@fadeIn]="isHeaderLoaded" class="down-arrow" src="/assets/icons/expand_more-white-48dp.svg">
+    <img [@fadeIn]="isHeaderLoaded" class="down-arrow" src="/assets/img/expand_more-white-48dp.svg">
   </a>
   <app-anchor-preview [previewable]="this.previewable" [isPreviewVisible]="this.isPreviewVisible">
   </app-anchor-preview>

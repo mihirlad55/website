@@ -1,30 +1,25 @@
 import {Directive, Input, AfterContentInit, AfterContentChecked} from '@angular/core';
 
-const rootPreviewPath = "/assets/previews/"
-
 @Directive({
   selector: '[appPreviewable]',
   exportAs: 'appPreviewable'
 })
 export class PreviewableDirective implements AfterContentInit, AfterContentChecked {
   @Input() previewName: string;
-  previewNarrowPath = '';
-  previewWidePath = ''
-  previewPath = '';
+  wideName = '';
+  narrowName = '';
+  name = '';
 
   constructor() {
   }
 
   ngAfterContentInit(): void {
-    this.previewWidePath = rootPreviewPath + this.previewName + "-wide.png";
-    this.previewNarrowPath = rootPreviewPath + this.previewName + "-narrow.png";
+    this.wideName = this.previewName + "-wide";
+    this.narrowName = this.previewName + "-narrow";
   }
 
   ngAfterContentChecked(): void {
-    if (window.innerWidth <= 768)
-      this.previewPath = this.previewNarrowPath;
-    else
-      this.previewPath = this.previewWidePath;
+    this.name = (window.innerWidth <= 768 ? this.narrowName : this.wideName);
   }
 
 }

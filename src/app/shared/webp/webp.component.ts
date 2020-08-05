@@ -1,25 +1,29 @@
-import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
+import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
 
-const imgPath = '/assets/'
+const imgPath = '/assets/img'
 @Component({
   selector: 'app-webp',
   templateUrl: './webp.component.html',
   styleUrls: ['./webp.component.css']
 })
-export class WebpComponent implements OnInit, AfterContentInit {
+export class WebpComponent implements OnInit, AfterContentChecked {
   @Input() name = '';
-  @Input() type = 'img';
+  @Input() type = '';
   @Input() alt = '';
   webp = '';
   jpg = '';
+  png = '';
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  ngAfterContentInit(): void {
-    this.webp = `${imgPath}${this.type}/${this.name}.webp`;
-    this.jpg = `${imgPath}${this.type}/${this.name}.jpg`;
+  ngAfterContentChecked(): void {
+    if (this.name !== '') {
+      this.webp = `${imgPath}/${this.type}/${this.name}.webp`;
+      this.jpg = `${imgPath}/${this.type}/${this.name}.jpg`;
+      this.png = `${imgPath}/${this.type}/${this.name}.png`;
+    }
   }
 }
