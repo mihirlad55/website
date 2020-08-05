@@ -9,6 +9,7 @@ handlers:
   static_files: dist/mihirlad/index.html
   upload: dist/mihirlad/index.html
   secure: always
+  expiration: "1m"
 
 - url: /(.*)
   static_files: dist/mihirlad/\1

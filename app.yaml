@@ -9,6 +9,13 @@ handlers:
   static_files: dist/mihirlad/index.html
   upload: dist/mihirlad/index.html
   secure: always
+  expiration: "1h"
+
+- url: /assets/json/(.*)
+  static_files: dist/mihirlad/assets/json/\1
+  upload: dist/mihirlad/assets/json/(.*)
+  secure: always
+  expiration: "1d"
 
 - url: /(.*)
   static_files: dist/mihirlad/\1
