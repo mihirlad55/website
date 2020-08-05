@@ -3,27 +3,27 @@
     <app-typewriter id="intro" autostart="true" delay="75" to_write="Hi, I'm Mihir"
       (onFinished)="this.occupation.start()">
     </app-typewriter>
-    <app-typewriter id="occupation" #occupation [initialDelay]="500" delay="75" to_write="Computer Engineer"
+    <app-typewriter id="occupation" #occupation initialDelay="500" delay="75" to_write="Computer Engineer"
       (onFinished)="doneLoading()">
     </app-typewriter>
   </div>
   <ul [@fadeDown]="isHeaderLoaded">
-    <li><a #email appPreviewable previewPath="/assets/icons/email.png"
-        (mouseover)="showPreview('/assets/previews/email.png')" (mouseout)="hidePreview()" title="Email Me"
-        href="mailto:contact@mihirlad.com"><img alt="Email" src="/assets/icons/email.png"></a></li>
-    <li><a title="My LinkedIn Profile" href="https://linkedin.com/in/mihirlad55"
-        (mouseover)="showPreview('/assets/previews/linkedin.png')" (mouseout)="hidePreview()"><img alt="LinkedIn"
-          src="/assets/icons/linkedin.png"></a></li>
-    <li><a title="My GitHub Profile" href="https://github.com/mihirlad55"
-        (mouseover)="showPreview('/assets/previews/github.png')" (mouseout)="hidePreview()"><img alt="GitHub"
-          src="/assets/icons/github.png"></a></li>
-    <li><a title="My GitLab Profile" href="https://gitlab.com/mihirlad55"
-        (mouseover)="showPreview('/assets/previews/gitlab.png')" (mouseout)="hidePreview()"><img alt="GitLab"
-          src="/assets/icons/gitlab.png"></a></li>
+    <li><a appPreviewable #email="appPreviewable" previewName="email" (mouseover)="showPreview(email)"
+        (mouseout)="hidePreview()" title="Email Me" href="mailto:contact@mihirlad.com"><img alt="Email"
+          src="/assets/icons/email.png"></a></li>
+    <li><a appPreviewable #linkedin="appPreviewable" previewName="linkedin" title="My LinkedIn Profile"
+        href="https://linkedin.com/in/mihirlad55" (mouseover)="showPreview(linkedin)" (mouseout)="hidePreview()"><img
+          alt="LinkedIn" src="/assets/icons/linkedin.png"></a></li>
+    <li><a appPreviewable #github="appPreviewable" previewName="github" title="My GitHub Profile"
+        href="https://github.com/mihirlad55" (mouseover)="showPreview(github)" (mouseout)="hidePreview()"><img
+          alt="GitHub" src="/assets/icons/github.png"></a></li>
+    <li><a appPreviewable #gitlab="appPreviewable" previewName="gitlab" title="My GitLab Profile"
+        href="https://gitlab.com/mihirlad55" (mouseover)="showPreview(gitlab)" (mouseout)="hidePreview()"><img
+          alt="GitLab" src="/assets/icons/gitlab.png"></a></li>
   </ul>
   <a class="down-arrow-link" [href]="this.scrollHref">
     <img [@fadeIn]="isHeaderLoaded" class="down-arrow" src="/assets/icons/expand_more-white-48dp.svg">
   </a>
-  <app-anchor-preview [previewPath]="this.previewPath" [isPreviewVisible]="this.isPreviewVisible">
+  <app-anchor-preview [previewable]="this.previewable" [isPreviewVisible]="this.isPreviewVisible">
   </app-anchor-preview>
 </header>

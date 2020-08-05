@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, AfterViewInit, ElementRef, ViewChild}
   from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
+import {PreviewableDirective} from '../../directives/previewable/previewable.directive';
 
 @Component({
   selector: 'app-anchor-preview',
@@ -28,7 +29,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
   ]
 })
 export class AnchorPreviewComponent implements OnInit, AfterViewInit {
-  @Input() previewPath: string;
+  @Input() previewable: PreviewableDirective;
   @Input() isPreviewVisible: boolean;
   @ViewChild('preview') previewEl: ElementRef;
 

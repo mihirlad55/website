@@ -25,11 +25,12 @@ export class HeaderComponent implements OnInit {
   @Input() scrollHref = "";
 
   isHeaderLoaded = false;
-  previewPath = '';
+  previewable: PreviewableDirective;
   isPreviewVisible = false;
 
-  showPreview(previewPath: string = ''): void {
-    this.previewPath = previewPath;
+  showPreview(previewable: PreviewableDirective): void {
+    this.previewable = previewable;
+    console.log(previewable);
     this.isPreviewVisible = true;
   }
 

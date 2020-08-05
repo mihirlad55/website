@@ -1,12 +1,19 @@
-import {Directive, Input} from '@angular/core';
+import {Directive, Input, AfterContentInit} from '@angular/core';
 
+const rootPreviewPath = "/assets/previews/"
 @Directive({
-  selector: '[appPreviewable]'
+  selector: '[appPreviewable]',
+  exportAs: 'appPreviewable'
 })
-export class PreviewableDirective {
-  @Input() previewPath: string;
-  @Input() previewAlt = '';
+export class PreviewableDirective implements AfterContentInit {
+  @Input() previewName: string;
+  previewPath = '';
 
-  constructor() {}
+  constructor() {
+  }
+
+  ngAfterContentInit(): void {
+    this.previewPath = rootPreviewPath + this.previewName + ".png";
+  }
 
 }
