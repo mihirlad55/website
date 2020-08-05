@@ -2,7 +2,7 @@ runtime: nodejs12
 service: staging
 instance_class: F1
 
-default_expiration: "180d"
+default_expiration: "1m"
 
 handlers:
 - url: /
