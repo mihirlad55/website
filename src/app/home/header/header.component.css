@@ -57,12 +57,12 @@ ul li {
 ul li a {
   padding: 10px;
   display: inline-block;
+  border-radius: 50%;
 }
 
 ul li a:hover {
   background-color: #00000047;
-  border-radius: 50%;
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.1);
   transition: 0.2s ease-in;
 }
 
