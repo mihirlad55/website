@@ -6,6 +6,7 @@ picture {
   display: block;
   height: inherit;
   width: inherit;
+  max-width: inherit;
   object-fit: inherit;
   margin: inherit;
 }
@@ -14,6 +15,7 @@ picture img {
   display: block;
   height: inherit;
   width: inherit;
+  max-width: inherit;
   object-fit: inherit;
   margin: inherit;
 }

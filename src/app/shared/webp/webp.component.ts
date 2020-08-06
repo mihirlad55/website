@@ -1,12 +1,13 @@
-import { Component, OnInit, Input, AfterContentChecked } from '@angular/core';
+import { Component, OnInit, Input, DoCheck } from '@angular/core';
 
 const imgPath = '/assets/img'
 @Component({
   selector: 'app-webp',
   templateUrl: './webp.component.html',
-  styleUrls: ['./webp.component.css']
+  styleUrls: ['./webp.component.css'],
+  exportAs: 'app-webp'
 })
-export class WebpComponent implements OnInit, AfterContentChecked {
+export class WebpComponent implements OnInit, DoCheck {
   @Input() name = '';
   @Input() type = '';
   @Input() alt = '';
@@ -19,7 +20,7 @@ export class WebpComponent implements OnInit, AfterContentChecked {
   ngOnInit(): void {
   }
 
-  ngAfterContentChecked(): void {
+  ngDoCheck(): void {
     if (this.name !== '') {
       if (this.type !== '') {
         this.webp = `${imgPath}/${this.type}/${this.name}.webp`;

@@ -8,26 +8,19 @@
     </app-typewriter>
   </div>
   <ul [@fadeDown]="isHeaderLoaded">
-    <li><a appPreviewable #email="appPreviewable" previewName="email" (mouseover)="showPreview(email)"
-        (mouseout)="hidePreview()" title="Email Me" href="mailto:contact@mihirlad.com">
-        <app-webp alt="Email" type="links" [name]="email.previewName"></app-webp>
-      </a></li>
-    <li><a appPreviewable #linkedin="appPreviewable" previewName="linkedin" title="My LinkedIn Profile"
-        href="https://linkedin.com/in/mihirlad55" (mouseover)="showPreview(linkedin)" (mouseout)="hidePreview()">
-        <app-webp type="links" alt="LinkedIn" [name]="linkedin.previewName"></app-webp>
-      </a></li>
-    <li><a appPreviewable #github="appPreviewable" previewName="github" title="My GitHub Profile"
-        href="https://github.com/mihirlad55" (mouseover)="showPreview(github)" (mouseout)="hidePreview()">
-        <app-webp type="links" alt="GitHub" [name]="github.previewName"></app-webp>
-      </a></li>
-    <li><a appPreviewable #gitlab="appPreviewable" previewName="gitlab" title="My GitLab Profile"
-        href="https://gitlab.com/mihirlad55" (mouseover)="showPreview(gitlab)" (mouseout)="hidePreview()">
-        <app-webp type="links" alt="GitLab" [name]="gitlab.previewName"></app-webp>
-      </a></li>
+    <li *ngFor="let link of this.links">
+      <a appPreviewable #previewable="appPreviewable" [previewName]="link.name" (mouseover)="showPreview(link)"
+        (mouseout)="hidePreview(link)" [title]="link.title" [href]="link.href">
+        <app-webp [alt]="link.alt" type="links" [name]="link.name"></app-webp>
+        {{ bindPreviewable(previewable, link) }}
+      </a>
+    </li>
   </ul>
   <a class="down-arrow-link" [href]="this.scrollHref">
     <img [@fadeIn]="isHeaderLoaded" class="down-arrow" src="/assets/img/expand_more-white-48dp.svg">
   </a>
-  <app-anchor-preview [previewable]="this.previewable" [isPreviewVisible]="this.isPreviewVisible">
+  <app-anchor-preview *ngFor="let link of this.links" #preview
+    [style.bottom]="link.previewable ? (this.win.innerHeight - link.previewable.elTop) + 'px' : 0"
+    [previewable]="link.previewable" [isPreviewVisible]="link.isPreviewVisible">
   </app-anchor-preview>
 </header>

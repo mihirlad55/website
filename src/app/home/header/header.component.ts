@@ -1,7 +1,17 @@
-import {Component, OnInit, ViewChild, Input, Renderer2} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewChildren, Input, Renderer2, QueryList} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {TypewriterComponent} from '../../shared/typewriter/typewriter.component';
 import {PreviewableDirective} from '../../directives/previewable/previewable.directive';
+import {AnchorPreviewComponent} from '../../shared/anchor-preview/anchor-preview.component';
+
+class Link {
+  name = '';
+  title = '';
+  href = '';
+  alt = '';
+  isPreviewVisible? = false;
+  previewable?: PreviewableDirective;
+}
 
 @Component({
   selector: 'app-header',
@@ -27,14 +37,45 @@ export class HeaderComponent implements OnInit {
   isHeaderLoaded = false;
   previewable: PreviewableDirective;
   isPreviewVisible = false;
+  win = window;
 
-  showPreview(previewable: PreviewableDirective): void {
-    this.previewable = previewable;
-    this.isPreviewVisible = true;
+  links: Link[] = [
+    {
+      name: 'email',
+      title: 'Email Me',
+      href: 'mailto:contact@mihirlad.com',
+      alt: 'Email'
+    },
+    {
+      name: 'linkedin',
+      title: 'My LinkedIn Profile',
+      href: 'https://linkedin.com/in/mihirlad55',
+      alt: 'LinkedIn'
+    },
+    {
+      name: 'github',
+      title: 'My GitHub Profile',
+      href: 'https://github.com/mihirlad55',
+      alt: 'GitHub'
+    },
+    {
+      name: 'gitlab',
+      title: 'My GitLab Profile',
+      href: 'https://gitlab.com/mihirlad55',
+      alt: 'GitLab'
+    }
+  ];
+
+  showPreview(link: Link): void {
+    link.isPreviewVisible = true;
   }
 
-  hidePreview(): void {
-    this.isPreviewVisible = false;
+  hidePreview(link: Link): void {
+    link.isPreviewVisible = false;
+  }
+
+  bindPreviewable(previewable: PreviewableDirective, link: Link) {
+    link.previewable = previewable;
   }
 
   constructor(private renderer: Renderer2) {}
@@ -42,9 +83,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     if (window.scrollY == 0)
       this.renderer.addClass(document.body, 'no-scroll');
-  }
-
-  ngAfterViewInit(): void {
   }
 
   doneLoading(): void {
