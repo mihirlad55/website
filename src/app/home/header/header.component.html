@@ -1,12 +1,27 @@
 <header>
   <div>
-    <app-typewriter id="intro" #intro delay="75" to_write="Hi, I'm Mihir" (onFinished)="this.occupation.start()">
+    <app-typewriter id="intro" autostart="true" delay="75" to_write="Hi, I'm Mihir"
+      (onFinished)="this.occupation.start()">
     </app-typewriter>
-    <app-typewriter id="occupation" #occupation [initialDelay]="500" delay="75" to_write="Computer Engineer"
-      (onFinished)="this.isHeaderLoaded = true">
+    <app-typewriter id="occupation" #occupation initialDelay="500" delay="75" to_write="Computer Engineer"
+      (onFinished)="doneLoading()">
     </app-typewriter>
   </div>
+  <ul [@fadeDown]="isHeaderLoaded">
+    <li *ngFor="let link of this.links">
+      <a appPreviewable #previewable="appPreviewable" [previewName]="link.name" (mouseover)="showPreview(link)"
+        (mouseout)="hidePreview(link)" [title]="link.title" [href]="link.href">
+        <app-webp [alt]="link.alt" type="links" [name]="link.name"></app-webp>
+        {{ bindPreviewable(previewable, link) }}
+      </a>
+    </li>
+  </ul>
   <a class="down-arrow-link" [href]="this.scrollHref">
-    <img [@headerLoaded]="isHeaderLoaded ? 'shown' : 'hidden'" class="down-arrow" src="/assets/icons/expand_more-white-48dp.svg">
+    <img [@fadeIn]="isHeaderLoaded" class="down-arrow" src="/assets/img/expand_more-white-48dp.svg" alt="Down arrow"
+      title="Scroll down">
   </a>
+  <app-anchor-preview *ngFor="let link of this.links" #preview
+    [style.bottom]="link.previewable ? (this.win.innerHeight - link.previewable.elTop) + 'px' : 0"
+    [previewable]="link.previewable" [isPreviewVisible]="link.isPreviewVisible">
+  </app-anchor-preview>
 </header>

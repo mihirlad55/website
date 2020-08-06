@@ -10,7 +10,7 @@ header {
 header div {
   vertical-align: middle;
   display: flex;
-  flex-grow: 1;
+  flex-grow: 5;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -41,6 +41,37 @@ header div {
   height: 100px;
   width: 100%;
   opacity: 0;
+}
+
+ul {
+  flex-grow: 1;
+}
+
+ul li {
+  display: inline;
+  padding: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul li a {
+  padding: 10px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+ul li a:hover {
+  background-color: #00000047;
+  transform: translateY(-5px) scale(1.1);
+  transition: 0.2s ease-in;
+}
+
+ul li a app-webp {
+  height: 40px;
+}
+
+app-anchor-preview {
+  position: fixed;
 }
 
 @media screen and (max-width: 600px) {

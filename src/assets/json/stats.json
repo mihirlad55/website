@@ -1,0 +1,27 @@
+[
+  {
+    "name": "GitHub Stars",
+    "description": "Number of stars given by others to my GitHub repositories",
+    "value": "47"
+  },
+  {
+    "name": "VEX World Appearances",
+    "description": "Number of times my team qualified for VEX Worlds",
+    "value": "3"
+  },
+  {
+    "name": "Semester GPA",
+    "description": "Latest semester's GPA",
+    "value": "4.0"
+  },
+  {
+    "name": "Programming Languages",
+    "description": "Number of programming languages I am proficient in",
+    "value": "13"
+  },
+  {
+    "name": "Open Source Projects",
+    "description": "Number of open source projects I am maintaining",
+    "value": "10"
+  }
+]

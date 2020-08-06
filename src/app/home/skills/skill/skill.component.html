@@ -1,5 +1,5 @@
 <div>
-  <img [src]="this.skill.icon_path" [alt]="this.skill.name">
+  <app-webp type="skills" [name]="this.skill.iconName" [alt]="this.skill.iconName"></app-webp>
   <p *ngIf="this.skill.description.trim() !== ''">{{ this.skill.description }}</p>
   <h2>{{ this.skill.name }}</h2>
 </div>

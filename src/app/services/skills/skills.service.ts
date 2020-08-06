@@ -7,7 +7,7 @@ export class Skill {
   name: string;
   description: string;
   level: number;
-  icon_path: string;
+  iconName: string;
 }
 
 @Injectable({

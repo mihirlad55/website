@@ -2,11 +2,14 @@ runtime: nodejs12
 service: staging
 instance_class: F1
 
+default_expiration: "1m"
+
 handlers:
 - url: /
   static_files: dist/mihirlad/index.html
   upload: dist/mihirlad/index.html
   secure: always
+  expiration: "1m"
 
 - url: /(.*)
   static_files: dist/mihirlad/\1

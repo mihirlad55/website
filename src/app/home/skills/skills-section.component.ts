@@ -1,15 +1,12 @@
-import {Component, OnInit, AfterViewInit, ViewChild} from '@angular/core';
-import {TypewriterComponent} from '../../shared/typewriter/typewriter.component';
-import {SkillsService, Skill} from '../../services/skills.service';
+import {Component, OnInit} from '@angular/core';
+import {SkillsService, Skill} from '../../services/skills/skills.service';
 
 @Component({
   selector: 'app-skills-section',
   templateUrl: './skills-section.component.html',
   styleUrls: ['./skills-section.component.css']
 })
-export class SkillsSectionComponent implements OnInit, AfterViewInit {
-  @ViewChild('skillsHeading') skillsHeading: TypewriterComponent;
-
+export class SkillsSectionComponent implements OnInit {
   skills: Skill[];
 
   constructor(private skillsService: SkillsService) {}
@@ -19,9 +16,4 @@ export class SkillsSectionComponent implements OnInit, AfterViewInit {
       this.skills = skills;
     });
   }
-
-  ngAfterViewInit(): void {
-    this.skillsHeading.start();
-  }
-
 }

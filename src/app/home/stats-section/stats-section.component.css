@@ -1,0 +1,36 @@
+section {
+  padding: 100px 0;
+  background-color: var(--primary-color-1);
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.heading-container {
+  background-color: var(--secondary-color-4);
+  padding: 10px 15px;
+  display: inline-block;
+}
+
+.heading-container h1 {
+  display: block;
+  font: bold 4em 'Liberation Mono';
+  color: var(--secondary-color-1);
+  transition: ease-in 1s;
+}
+
+.heading-container p {
+  font: 1.2em 'Liberation Mono';
+  color: var(--secondary-color-1);
+  transition: ease-in 1s;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}

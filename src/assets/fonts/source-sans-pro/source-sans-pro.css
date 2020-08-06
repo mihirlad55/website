@@ -1,67 +1,78 @@
 @font-face {
   font-family: Source Sans Pro;
   font-weight: bold;
-  src: url(SourceSansPro-Bold.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-Bold.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-variant: Black;
-  src: url(SourceSansPro-Black.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-Black.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-weight: 300;
-  src: url(SourceSansPro-Light.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-Light.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-style: italic;
-  src: url(SourceSansPro-Italic.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-Italic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
-  src: url(SourceSansPro-Regular.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-Regular.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-weight: 500;
-  src: url(SourceSansPro-SemiBold.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-SemiBold.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-weight: bold;
   font-style: italic;
-  src: url(SourceSansPro-BoldItalic.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-BoldItalic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-weight: 200;
-  src: url(SourceSansPro-ExtraLight.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-ExtraLight.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-variant: Black;
   font-style: italic;
-  src: url(SourceSansPro-BlackItalic.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-BlackItalic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-style: italic;
   font-weight: 500;
-  src: url(SourceSansPro-SemiBoldItalic.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-SemiBoldItalic.ttf);
+  font-display: swap;
 }
 
 @font-face {
   font-family: Source Sans Pro;
   font-style: ExtraLightItalic;
-  src: url(SourceSansPro-ExtraLightItalic.ttf)
+  src: url(/assets/fonts/source-sans-pro/SourceSansPro-ExtraLightItalic.ttf);
+  font-display: swap;
 }

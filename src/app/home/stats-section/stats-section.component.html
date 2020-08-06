@@ -1,0 +1,13 @@
+<section>
+  <div class="container">
+    <div class="heading-container">
+      <h1>
+        <app-typewriter autostart="true" delay="75" to_write="// Stats"></app-typewriter>
+      </h1>
+      <p>Who doesn't like numbers</p>
+    </div>
+    <div class="stats-container">
+      <app-stat *ngFor="let stat of this.stats" [stat]="stat"></app-stat>
+    </div>
+  </div>
+</section>

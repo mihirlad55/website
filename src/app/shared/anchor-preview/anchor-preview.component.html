@@ -1,0 +1,4 @@
+<app-webp #preview type="previews" [name]="this.previewable ? this.previewable.name : ''"
+  [@expand]="this.isPreviewVisible" style="width: 100%; height: 0; opacity: 0"></app-webp>
+<div class='overlay' [style.display]="this.isPreviewVisible ? 'block' : 'none'" [@fadeIn]="this.isPreviewVisible"
+  [@darken]="this.isPreviewVisible"></div>

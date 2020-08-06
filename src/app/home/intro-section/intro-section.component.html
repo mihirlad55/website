@@ -2,16 +2,16 @@
   <div class="container">
     <div class="heading-container">
       <h1>
-        <app-typewriter #heading delay="75" to_write="// About Me"></app-typewriter>
+        <app-typewriter autostart="true" delay="75" to_write="// About Me"></app-typewriter>
       </h1>
       <p>I ♥ robots!</p>
     </div>
     <div class="content">
       <div class="parallax-wrapper">
-        <img appParallax [ratio]="-0.08" alt="Headshot of Mihir Lad" src="/assets/img/headshot.png">
+        <app-webp appParallax [ratio]="-0.08" alt="Headshot of Mihir Lad" name="headshot"></app-webp>
       </div>
       <div class="description">
-        <p>Hi, I'm Mihir Lad, a Computer Engineering student at Florida Polytechnic University expected to graduate in 2022. My concentration is Autonomous Robotic Systems.</p>
+        <p>Hi, I'm Mihir Lad, a Computer Engineering student at <a href="https://floridapoly.edu">Florida Polytechnic University</a> expected to graduate in 2022. My concentration is Autonomous Robotic Systems.</p>
         <p>I love technology and making things from wood work to software, especially when others can enjoy the final product as much as I do. Anything that requires efficient design, logical thinking, and creativity is right up my alley.</p>
         <p>That being said, robotics is my passion. With 4 years of robotics experience in mechanical, electrical, and software engineering and as the current President of Purple Fire Robotics, I am determined to improve the world through robotics and automation.</p>
       </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {TypewriterComponent} from '../../shared/typewriter/typewriter.component';
 
 @Component({
@@ -6,16 +6,10 @@ import {TypewriterComponent} from '../../shared/typewriter/typewriter.component'
   templateUrl: './intro-section.component.html',
   styleUrls: ['./intro-section.component.css']
 })
-export class IntroSectionComponent implements OnInit, AfterViewInit {
-  @ViewChild('heading') heading: TypewriterComponent;
-
+export class IntroSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  ngAfterViewInit(): void {
-    this.heading.start();
   }
 
 }
