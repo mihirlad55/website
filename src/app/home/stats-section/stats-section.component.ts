@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StatsService, Stat} from '../../services/stats/stats.service';
 
 @Component({
   selector: 'app-stats-section',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats-section.component.css']
 })
 export class StatsSectionComponent implements OnInit {
+  stats: Stat[];
 
-  constructor() { }
+  constructor(private statsService: StatsService) { }
 
   ngOnInit(): void {
+    this.statsService.getStats().subscribe(stats => {
+      this.stats = stats;
+    });
   }
 
 }

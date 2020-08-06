@@ -9,6 +9,7 @@ import {SkillsSectionComponent} from './skills/skills-section.component';
 import {IntroSectionComponent} from './intro-section/intro-section.component';
 import {ParallaxDirective} from '../directives/parallax/parallax.directive';
 import {StatsSectionComponent} from './stats-section/stats-section.component';
+import { StatComponent } from './stats-section/stat/stat.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {StatsSectionComponent} from './stats-section/stats-section.component';
     SkillsSectionComponent,
     IntroSectionComponent,
     ParallaxDirective,
-    StatsSectionComponent
+    StatsSectionComponent,
+    StatComponent
   ],
   imports: [
     CommonModule,

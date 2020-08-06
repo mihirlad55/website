@@ -26,3 +26,11 @@ section {
   color: var(--secondary-color-1);
   transition: ease-in 1s;
 }
+
+.stats-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
