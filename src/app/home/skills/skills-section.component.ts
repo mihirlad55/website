@@ -9,7 +9,8 @@ import {SkillsService, Skill} from '../../services/skills/skills.service';
 export class SkillsSectionComponent implements OnInit {
   skills: Skill[];
 
-  constructor(private skillsService: SkillsService) {}
+  constructor(private skillsService: SkillsService) {
+  }
 
   ngOnInit(): void {
     this.skillsService.getSkills().subscribe(skills => {

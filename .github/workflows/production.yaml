@@ -57,3 +57,7 @@ jobs:
         run: gcloud app deploy app.yaml
       - name: Deploy dispatch.yaml
         run: gcloud app deploy dispatch.yaml
+      - name: Deploy update-stats cloud function
+        run: gcloud functions deploy update-stats --entry-point updateStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-stats' --service-account='update-stats-function@mihirlad-website.iam.gserviceaccount.com'
+      - name: Deploy get-stats cloud function
+        run: gcloud functions deploy get-stats --entry-point getStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-stats-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated

@@ -7,13 +7,20 @@ import {StatsService, Stat} from '../../services/stats/stats.service';
   styleUrls: ['./stats-section.component.css']
 })
 export class StatsSectionComponent implements OnInit {
-  stats: Stat[];
+  stats: Stat[] = [];
+  updatedDate: number;
 
-  constructor(private statsService: StatsService) { }
+  constructor(private statsService: StatsService) {
+    const hours = new Date().getHours() * 60 * 60 * 1000;
+    const minutes = new Date().getMinutes() * 60 * 1000;
+    const seconds = new Date().getSeconds() * 1000;
+
+    this.updatedDate = Date.now() - hours - minutes - seconds;
+  }
 
   ngOnInit(): void {
     this.statsService.getStats().subscribe(stats => {
-      this.stats = stats;
+      this.stats.push(...stats);
     });
   }
 

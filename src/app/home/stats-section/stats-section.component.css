@@ -34,3 +34,9 @@ section {
   justify-content: center;
   margin-top: 30px;
 }
+
+.date-updated {
+  color: var(--secondary-color-1);
+  font: 1.3em 'Source Sans Pro', 'Helvetica';
+  margin-left: 30px;
+}
