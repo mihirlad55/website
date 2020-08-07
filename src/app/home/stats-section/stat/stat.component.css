@@ -8,11 +8,11 @@
 }
 
 h2 {
-  font: bold 5em 'Liberation Mono';
+  font: bold 5em 'Liberation Mono', 'Courier New';
   color: var(--secondary-color-1);
 }
 
 p {
-  font: bold 1.5em 'Source Sans Pro';
+  font: bold 1.5em 'Source Sans Pro', 'Helvetica';
   color: var(--secondary-color-1);
 }

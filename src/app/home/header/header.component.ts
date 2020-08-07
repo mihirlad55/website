@@ -1,8 +1,7 @@
-import {Component, OnInit, ViewChild, ViewChildren, Input, Renderer2, QueryList} from '@angular/core';
+import {Component, OnInit, ViewChild, Input} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {TypewriterComponent} from '../../shared/typewriter/typewriter.component';
 import {PreviewableDirective} from '../../directives/previewable/previewable.directive';
-import {AnchorPreviewComponent} from '../../shared/anchor-preview/anchor-preview.component';
 
 class Link {
   name = '';
@@ -78,15 +77,12 @@ export class HeaderComponent implements OnInit {
     link.previewable = previewable;
   }
 
-  constructor(private renderer: Renderer2) {}
+  constructor() {}
 
   ngOnInit(): void {
-    if (window.scrollY == 0)
-      this.renderer.addClass(document.body, 'no-scroll');
   }
 
   doneLoading(): void {
     this.isHeaderLoaded = true;
-    this.renderer.removeClass(document.body, 'no-scroll');
   }
 }

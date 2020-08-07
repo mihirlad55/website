@@ -18,7 +18,3 @@ html {
 a {
   color: var(--secondary-color-3);
 }
-
-.no-scroll {
-  overflow-y: hidden;
-}

@@ -16,13 +16,13 @@ section {
 
 .heading-container h1 {
   display: block;
-  font: bold 4em 'Liberation Mono';
+  font: bold 4em 'Liberation Mono', 'Courier New';
   color: var(--secondary-color-1);
   transition: ease-in 1s;
 }
 
 .heading-container p {
-  font: 1.2em 'Liberation Mono';
+  font: 1.2em 'Liberation Mono', 'Courier New';
   color: var(--secondary-color-1);
   transition: ease-in 1s;
 }
@@ -51,7 +51,7 @@ app-webp {
 }
 
 .content .description {
-  font: 300 1.5em 'Source Sans Pro';
+  font: 300 1.5em 'Source Sans Pro', 'Helvetica';
   text-align: justify;
   color: var(--secondary-color-1);
   padding: 10px 40px;
