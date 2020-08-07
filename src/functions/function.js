@@ -22,7 +22,7 @@ async function uploadStats(path) {
   });
 }
 
-exports.updateStats = (req, res) => {
+exports.updateStats = (message, context) => {
   let totalStars = 0;
   let totalRepos = 0;
 
@@ -56,10 +56,6 @@ exports.updateStats = (req, res) => {
 
     uploadStats(tmpStatsPath).then(() => {
       console.log(`${tmpStatsPath} uploaded to ${bucket}`)
-
-      // If called from test.js, res will be undefined
-      if (res)
-        res.status(200).send();
     });
   });
 };
