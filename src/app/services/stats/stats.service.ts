@@ -1,7 +1,10 @@
 import {Injectable} from '@angular/core';
-import {Observable, of} from 'rxjs';
+import {Observable, of, concat} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
+
+const manualStatsUrl = '/assets/json/stats.json'
+const getStatsUrl = 'https://us-central1-mihirlad-website.cloudfunctions.net/get-stats';
 
 export class Stat {
   name: string;
@@ -13,17 +16,26 @@ export class Stat {
   providedIn: 'root'
 })
 export class StatsService {
-  private statsUrl = '/assets/json/stats.json'
+
 
   constructor(private http: HttpClient) {}
 
   getStats(): Observable<Stat[]> {
-    return this.http.get<Stat[]>(this.statsUrl).pipe(
+    let manualStats = this.http.get<Stat[]>(manualStatsUrl).pipe(
       catchError((error: any) => {
         console.error(error);
         return (of([]) as Observable<Stat[]>);
       })
     );
+
+    let autoStats = this.http.get<Stat[]>(getStatsUrl).pipe(
+      catchError((error: any) => {
+        console.error(error);
+       return (of([]) as Observable<Stat[]>);
+      })
+    );
+
+    return concat(manualStats, autoStats);
   }
 }
 

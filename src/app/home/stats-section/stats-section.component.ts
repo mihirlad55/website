@@ -7,13 +7,13 @@ import {StatsService, Stat} from '../../services/stats/stats.service';
   styleUrls: ['./stats-section.component.css']
 })
 export class StatsSectionComponent implements OnInit {
-  stats: Stat[];
+  stats: Stat[] = [];
 
   constructor(private statsService: StatsService) { }
 
   ngOnInit(): void {
     this.statsService.getStats().subscribe(stats => {
-      this.stats = stats;
+      this.stats.push(...stats);
     });
   }
 
