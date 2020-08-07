@@ -40,3 +40,13 @@ section {
   font: 1.3em 'Source Sans Pro', 'Helvetica';
   margin-left: 30px;
 }
+
+@media screen and (max-width: 600px) {
+  .heading-container h1 {
+    font-size: 2em;
+  }
+
+  .heading-container p {
+    font-size: 1em;
+  }
+}
