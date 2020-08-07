@@ -25,6 +25,7 @@ async function uploadStats(path) {
 exports.updateStats = (message, context) => {
   let totalStars = 0;
   let totalRepos = 0;
+  let totalActiveRepos = 0;
 
   octokit.repos.listForUser({
     "username": "mihirlad55",
@@ -33,11 +34,13 @@ exports.updateStats = (message, context) => {
     for (const repo of data) {
       totalStars += repo.stargazers_count;
       totalRepos++;
+      if (!repo.archived && !repo.disabled)
+        totalActiveRepos++;
     }
 
     const stats = [
       {
-        name: 'GitHub Stars',
+        name: 'GitHub Stargazers',
         description: 'Number of stars given by others to my GitHub repositories',
         value: totalStars
       },
@@ -45,6 +48,11 @@ exports.updateStats = (message, context) => {
         name: 'GitHub Projects',
         description: 'Total number of public GitHub repositories',
         value: totalRepos
+      },
+      {
+        name: 'Active GitHub Projects',
+        description: 'Total number of active public GitHub repositories',
+        value: totalActiveRepos,
       }
     ];
 
