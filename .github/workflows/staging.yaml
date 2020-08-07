@@ -55,4 +55,3 @@ jobs:
           project_id: ${{ secrets.PROJECT_ID }}
       - name: Deploy app-staging.yaml
         run: gcloud app deploy app-staging.yaml
-
