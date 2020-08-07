@@ -18,7 +18,7 @@ header div {
 
 #intro {
   display: block;
-  font: bold 8em 'Liberation Mono';
+  font: bold 8em 'Liberation Mono', 'Courier New';
   text-align: center;
   color: var(--secondary-color-1);
   transition: ease-in 1s;
@@ -26,7 +26,7 @@ header div {
 
 #occupation {
   display: block;
-  font: bold 4em 'Liberation Mono';
+  font: bold 4em 'Liberation Mono', 'Courier New';
   text-align: center;
   color: var(--secondary-color-1);
   transition: ease-in 1s;

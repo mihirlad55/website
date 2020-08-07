@@ -2,7 +2,6 @@ import {Component, OnInit, ViewChild, Input} from '@angular/core';
 import {trigger, state, style, animate, transition} from '@angular/animations';
 import {TypewriterComponent} from '../../shared/typewriter/typewriter.component';
 import {PreviewableDirective} from '../../directives/previewable/previewable.directive';
-import {AnchorPreviewComponent} from '../../shared/anchor-preview/anchor-preview.component';
 
 class Link {
   name = '';
