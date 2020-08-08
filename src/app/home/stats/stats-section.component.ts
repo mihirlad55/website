@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {StatsService, Stat} from '../../services/stats/stats.service';
+import {finalize} from 'rxjs/operators';
+
+const numOfStatsToDisplay = 5;
 
 @Component({
   selector: 'app-stats-section',
@@ -8,20 +11,37 @@ import {StatsService, Stat} from '../../services/stats/stats.service';
 })
 export class StatsSectionComponent implements OnInit {
   stats: Stat[] = [];
+  visibleStats: Stat[] = [];
   updatedDate: number;
 
   constructor(private statsService: StatsService) {
-    const hours = new Date().getHours() * 60 * 60 * 1000;
-    const minutes = new Date().getMinutes() * 60 * 1000;
-    const seconds = new Date().getSeconds() * 1000;
+    const date = new Date();
+    const hours = date.getHours() * 60 * 60 * 1000;
+    const minutes = date.getMinutes() * 60 * 1000;
+    const seconds = date.getSeconds() * 1000;
 
     this.updatedDate = Date.now() - hours - minutes - seconds;
   }
 
+  populateRandomStats(): void {
+    this.visibleStats = [];
+    let tempStats = [...this.stats];
+    let left = this.stats.length;
+
+    for (let i = 0; i < numOfStatsToDisplay; i++) {
+      let rand = Math.floor(Math.random() * --left);
+      this.visibleStats.push(tempStats[rand]);
+      tempStats.splice(rand, 1);
+    }
+  }
+
   ngOnInit(): void {
-    this.statsService.getStats().subscribe(stats => {
+    this.statsService.getStats().pipe(
+      finalize(() => {
+        this.populateRandomStats();
+      })
+    ).subscribe(stats => {
       this.stats.push(...stats);
     });
   }
-
 }

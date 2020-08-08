@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable, of, concat} from 'rxjs';
+import {Observable, of, merge} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 
@@ -35,7 +35,7 @@ export class StatsService {
       })
     );
 
-    return concat(manualStats, autoStats);
+    return merge(manualStats, autoStats);
   }
 }
 
