@@ -10,7 +10,8 @@
         </div>
       </div>
       <div class="refresh-wrapper">
-        <img (click)="populateRandomStats()" title="Get random stats" class="refresh-icon"
+        <img (click)="populateRandomStats()" title="Get random stats"
+          [class]="this.visibleStats.length == 0 ? 'rotate refresh-icon' : 'refresh-icon'"
           src="/assets/img/refresh-white-48dp.svg" alt="Refresh stats">
       </div>
     </div>
