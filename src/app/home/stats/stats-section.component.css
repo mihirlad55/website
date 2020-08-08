@@ -38,7 +38,7 @@ section {
 .date-updated {
   color: var(--secondary-color-1);
   font: 1.3em 'Source Sans Pro', 'Helvetica';
-  margin-left: 30px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -48,5 +48,9 @@ section {
 
   .heading-container p {
     font-size: 1em;
+  }
+
+  .date-updated {
+    margin-left: 0;
   }
 }
