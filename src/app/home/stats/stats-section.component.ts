@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {StatsService, Stat} from '../../services/stats/stats.service';
+import {StatsService, Stat, GetStatsResponse}
+  from '../../services/stats/stats.service';
 import {finalize} from 'rxjs/operators';
 
 const numOfStatsToDisplay = 5;
@@ -13,16 +14,9 @@ export class StatsSectionComponent implements OnInit {
   stats: Stat[] = [];
   tempStats: Stat[] = [];
   visibleStats: Stat[] = [];
-  updatedDate: number;
+  updatedDate: number = Date.now();
 
-  constructor(private statsService: StatsService) {
-    const date = new Date();
-    const hours = date.getHours() * 60 * 60 * 1000;
-    const minutes = date.getMinutes() * 60 * 1000;
-    const seconds = date.getSeconds() * 1000;
-
-    this.updatedDate = Date.now() - hours - minutes - seconds;
-  }
+  constructor(private statsService: StatsService) { }
 
   populateRandomStats(): void {
     this.visibleStats = [];
@@ -40,12 +34,17 @@ export class StatsSectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.statsService.getStats().pipe(
+    this.statsService.getManualStats().subscribe(statsResponse => {
+      this.stats.push(...statsResponse.stats);
+    });
+
+    this.statsService.getManualStats().pipe(
       finalize(() => {
         this.populateRandomStats();
       })
-    ).subscribe(stats => {
-      this.stats.push(...stats);
+    ).subscribe(statsResponse => {
+      this.updatedDate = new Date(statsResponse.dateUpdated).getMilliseconds();
+      this.stats.push(...statsResponse.stats);
     });
   }
 }

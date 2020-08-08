@@ -12,6 +12,11 @@ export class Stat {
   value: string;
 }
 
+export class GetStatsResponse {
+  dateUpdated: string;
+  stats: Stat[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -20,22 +25,22 @@ export class StatsService {
 
   constructor(private http: HttpClient) {}
 
-  getStats(): Observable<Stat[]> {
-    let manualStats = this.http.get<Stat[]>(manualStatsUrl).pipe(
+  getManualStats(): Observable<GetStatsResponse> {
+    return this.http.get<GetStatsResponse>(manualStatsUrl).pipe(
       catchError((error: any) => {
         console.error(error);
-        return (of([]) as Observable<Stat[]>);
+        return (of(new GetStatsResponse()) as Observable<GetStatsResponse>);
       })
     );
+  }
 
-    let autoStats = this.http.get<Stat[]>(getStatsUrl).pipe(
+  getAutoStats(): Observable<GetStatsResponse> {
+    return this.http.get<GetStatsResponse>(getStatsUrl).pipe(
       catchError((error: any) => {
         console.error(error);
-       return (of([]) as Observable<Stat[]>);
+        return (of(new GetStatsResponse()) as Observable<GetStatsResponse>);
       })
     );
-
-    return merge(manualStats, autoStats);
   }
 }
 
