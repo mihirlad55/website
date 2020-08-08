@@ -11,6 +11,7 @@ const numOfStatsToDisplay = 5;
 })
 export class StatsSectionComponent implements OnInit {
   stats: Stat[] = [];
+  tempStats: Stat[] = [];
   visibleStats: Stat[] = [];
   updatedDate: number;
 
@@ -25,13 +26,16 @@ export class StatsSectionComponent implements OnInit {
 
   populateRandomStats(): void {
     this.visibleStats = [];
-    let tempStats = [...this.stats];
-    let left = this.stats.length;
+    // Re-populate tempStats if it has no stats left
+    if (this.tempStats.length == 0)
+      this.tempStats = [...this.stats];
 
-    for (let i = 0; i < numOfStatsToDisplay; i++) {
+    let left = this.tempStats.length;
+
+    for (let i = 0; i < numOfStatsToDisplay && this.tempStats.length > 0; i++) {
       let rand = Math.floor(Math.random() * --left);
-      this.visibleStats.push(tempStats[rand]);
-      tempStats.splice(rand, 1);
+      this.visibleStats.push(this.tempStats[rand]);
+      this.tempStats.splice(rand, 1);
     }
   }
 
