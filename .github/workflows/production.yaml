@@ -61,3 +61,7 @@ jobs:
         run: gcloud functions deploy update-stats --entry-point updateStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-stats' --service-account='update-stats-function@mihirlad-website.iam.gserviceaccount.com'
       - name: Deploy get-stats cloud function
         run: gcloud functions deploy get-stats --entry-point getStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-stats-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated
+      - name: Deploy endpoints services proxy
+        run: gcloud run deploy esp --image='gcr.io/endpoints-release/endpoints-runtime-serverless:2' --allow-unauthenticated --platform managed --region us-central1 --service-account='esp-run@mihirlad-website.iam.gserviceaccount.com'
+      - name: Deploy endpoints api
+        run: gcloud endpoints services deploy src/endpoints/openapi-functions.yaml
