@@ -1,14 +1,23 @@
 <section>
   <div class="container">
-    <div class="heading-container">
-      <h1>
-        <app-typewriter autostart="true" delay="75" to_write="// Stats"></app-typewriter>
-      </h1>
-      <p>Who doesn't like numbers</p>
+    <div class="heading-refresh-container">
+      <div class="heading-wrapper">
+        <div class="heading-container">
+          <h1>
+            <app-typewriter autostart="true" delay="75" to_write="// Stats"></app-typewriter>
+          </h1>
+          <p>Who doesn't like numbers</p>
+        </div>
+      </div>
+      <div class="refresh-wrapper">
+        <img (click)="populateRandomStats()" title="Get random stats" class="refresh-icon"
+          src="/assets/img/refresh-white-48dp.svg" alt="Refresh stats">
+      </div>
     </div>
     <div class="stats-container">
-      <app-stat *ngFor="let stat of this.stats" [stat]="stat"></app-stat>
+      <app-stat *ngFor="let stat of this.visibleStats" [stat]="stat"></app-stat>
     </div>
-    <p class="date-updated">The above data was updated automatically at {{ this.updatedDate | date:'MM-dd-yyyy hh:mmaa' }}</p>
+    <p class="date-updated">The above data is updated automatically every day. Last update:
+      {{ this.updatedDate | date:'MM-dd-yyyy hh:mmaa' }}</p>
   </div>
 </section>

@@ -8,6 +8,38 @@ section {
   margin: auto;
 }
 
+.heading-refresh-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.heading-wrapper {
+  flex: 10 8;
+  min-width: 190px;
+}
+
+.refresh-wrapper {
+  flex: 2 1;
+  min-width: 100px;
+  margin: 20px 0;
+}
+
+.refresh-icon {
+  height: 50px;
+  margin: auto;
+  display: block;
+  border-radius: 50%;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
+
+.refresh-icon:hover {
+  background-color: #00000047;
+  transform: translateY(-5px) scale(1.1);
+}
+
 .heading-container {
   background-color: var(--secondary-color-4);
   padding: 10px 15px;
@@ -38,7 +70,7 @@ section {
 .date-updated {
   color: var(--secondary-color-1);
   font: 1.3em 'Source Sans Pro', 'Helvetica';
-  margin-left: 30px;
+  padding: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -48,5 +80,9 @@ section {
 
   .heading-container p {
     font-size: 1em;
+  }
+
+  .date-updated {
+    margin-left: 0;
   }
 }
