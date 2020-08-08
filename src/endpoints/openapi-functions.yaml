@@ -32,7 +32,12 @@ paths:
         '200':
           description: A successful response
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Stat'
+            type: object
+            properties:
+              dateUpdated:
+                type: string
+              stats:
+                type: array
+                items:
+                  $ref: '#/definitions/Stat'
 

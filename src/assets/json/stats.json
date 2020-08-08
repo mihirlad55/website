@@ -1,17 +1,20 @@
-[
-  {
-    "name": "VEX World Appearances",
-    "description": "Number of times my team qualified for VEX Worlds",
-    "value": "3"
-  },
-  {
-    "name": "Semester GPA",
-    "description": "Latest semester's GPA",
-    "value": "4.0"
-  },
-  {
-    "name": "Programming Languages",
-    "description": "Number of programming languages I am proficient in",
-    "value": "13"
-  }
-]
+{
+  "dateUpdated": "2020-08-08T04:00:50.176Z",
+  "stats": [
+    {
+      "name": "VEX World Appearances",
+      "description": "Number of times my team qualified for VEX Worlds",
+      "value": "3"
+    },
+    {
+      "name": "Semester GPA",
+      "description": "Latest semester's GPA",
+      "value": "4.0"
+    },
+    {
+      "name": "Programming Languages",
+      "description": "Number of programming languages I am proficient in",
+      "value": "13"
+    }
+  ]
+}
