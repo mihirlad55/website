@@ -18,7 +18,7 @@
     <div class="stats-container">
       <app-stat *ngFor="let stat of this.visibleStats" [stat]="stat"></app-stat>
     </div>
-    <p class="date-updated">The above data is updated automatically every day. Last update:
+    <p *ngIf="this.updatedDate" class="date-updated">The above data is updated automatically every day. Last update:
       {{ this.updatedDate | date:'MM-dd-yyyy hh:mmaa' }}</p>
   </div>
 </section>
