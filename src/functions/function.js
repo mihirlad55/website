@@ -69,9 +69,21 @@ exports.updateStats = (message, context) => {
 };
 
 exports.getStats = (req, res) => {
-  storage.bucket(bucket).file('stats.json').download((err, contents) => {
+  let dateUpdated;
+  const file = storage.bucket(bucket).file('stats.json');
+
+  file.getMetadata((err, metadata, apiResponse) => {
+    dateUpdated = metadata.updated;
+  });
+
+  file.download((err, contents) => {
     // Allow cross-domain requests
+    const stats = JSON.parse(contents.toString('utf-8'));
+    const data = {
+      "dateUpdated": dateUpdated,
+      "stats": stats
+    };
     res.set('Access-Control-Allow-Origin', '*');
-    res.status(200).send(contents);
+    res.status(200).send(JSON.stringify(data));
   });
 };
