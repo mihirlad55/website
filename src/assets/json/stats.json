@@ -1,5 +1,5 @@
 {
-  "dateUpdated": "2020-08-08T04:00:50.176Z",
+  "dateUpdated": "2020-08-09T03:02:00.176Z",
   "stats": [
     {
       "name": "VEX World Appearances",
@@ -14,7 +14,27 @@
     {
       "name": "Programming Languages",
       "description": "Number of programming languages I am proficient in",
-      "value": "13"
+      "value": "22"
+    },
+    {
+      "name": "Hackathons Directed",
+      "description": "Number of hackathons I have directed",
+      "value": "1"
+    },
+    {
+      "name": "Hackathons Attended",
+      "description": "Number of hackathons I have attended",
+      "value": "5"
+    },
+    {
+      "name": "Hackathons Won",
+      "description": "Number of hackathons where I placed first",
+      "value": "1"
+    },
+    {
+      "name": "Robots Created",
+      "description": "Number of robots my team and I built/programmed/designed",
+      "value": "10"
     }
   ]
 }

@@ -91,10 +91,59 @@
     "show": true
   },
   {
-    "name": "PostgreSQL",
+    "name": "Makefile",
     "description": "",
-    "level": 3,
-    "icon_path": "/assets/icons/languages/psql.png",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/makefile.png",
+    "show": true
+  },
+  {
+    "name": "CMake",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/cmake.png",
+    "show": true
+  },
+  {
+    "name": "Vimscript",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/vimscript.png",
+    "show": true
+  },
+  {
+    "name": "Bash",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/bash.png",
+    "show": true
+  },
+  {
+    "name": "Batchfile",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/batchfile.png",
+    "show": true
+  },
+  {
+    "name": "LaTeX",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/latex.png",
+    "show": true
+  },
+  {
+    "name": "Perl",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/perl.png",
+    "show": true
+  },
+  {
+    "name": "Emacs Lisp",
+    "description": "",
+    "level": 2,
+    "icon_path": "/assets/icons/languages/emacs-lisp.png",
     "show": true
   }
 ]

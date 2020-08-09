@@ -1,18 +1,30 @@
 :host {
   padding: 15px;
-  max-width: 150px;
   min-width: 100px;
   margin: 35px;
   text-align: center;
   background-color: #00000023;
+  transition: 1s ease-in;
 }
 
 h2 {
   font: bold 5em 'Liberation Mono', 'Courier New';
   color: var(--secondary-color-1);
+  transition: 1s ease-in;
 }
 
 p {
   font: bold 1.5em 'Source Sans Pro', 'Helvetica';
   color: var(--secondary-color-1);
+  transition: 1s ease-in;
+}
+
+@media screen and (max-width: 450px) {
+  h2 {
+    font-size: 3em;
+  }
+
+  p {
+    font-size: 1.25em;
+  }
 }
