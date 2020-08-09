@@ -24,10 +24,8 @@ export class StatsSectionComponent implements OnInit {
     if (this.tempStats.length == 0)
       this.tempStats = [...this.stats];
 
-    let left = this.tempStats.length;
-
     for (let i = 0; i < numOfStatsToDisplay && this.tempStats.length > 0; i++) {
-      let rand = Math.floor(Math.random() * --left);
+      let rand = Math.floor(Math.random() * this.tempStats.length);
       this.visibleStats.push(this.tempStats[rand]);
       this.tempStats.splice(rand, 1);
     }
