@@ -153,18 +153,16 @@ async function compileStats(username) {
   return stats;
 }
 
-exports.updateStats = (message, context) => {
-  compileStats(GITHUB_USERNAME).then(stats => {
-    const statsStr = JSON.stringify(stats);
-    console.log(statsStr);
+exports.updateStats = async (message, context) => {
+  const stats = await compileStats(GITHUB_USERNAME);
+  const statsStr = JSON.stringify(stats);
+  console.log(statsStr);
 
-    fs.writeFileSync(TMP_STATS_PATH, statsStr);
-    console.log(`stats written to ${TMP_STATS_PATH}`);
+  fs.writeFileSync(TMP_STATS_PATH, statsStr);
+  console.log(`stats written to ${TMP_STATS_PATH}`);
 
-    uploadStats(TMP_STATS_PATH).then(() => {
-      console.log(`${TMP_STATS_PATH} uploaded to ${BUCKET}`)
-    });
-  });
+  await uploadStats(TMP_STATS_PATH);
+  console.log(`${TMP_STATS_PATH} uploaded to ${BUCKET}`)
 };
 
 exports.getStats = (req, res) => {
