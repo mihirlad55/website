@@ -3,6 +3,7 @@ name: Production CI/CD
 env:
   PROJECT_ID: ${{ secrets.PROJECT_ID }}
   RUN_REGION: us-central1
+  GITHUB_AUTH_TOKEN: ${{ secrets.GITHUB_AUTH_TOKEN }}
 
 on:
   push:
@@ -58,7 +59,7 @@ jobs:
       - name: Deploy dispatch.yaml
         run: gcloud app deploy dispatch.yaml
       - name: Deploy update-stats cloud function
-        run: gcloud functions deploy update-stats --entry-point updateStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-stats' --service-account='update-stats-function@mihirlad-website.iam.gserviceaccount.com'
+        run: gcloud functions deploy update-stats --entry-point updateStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-stats' --service-account='update-stats-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN=${GITHUB_AUTH_TOKEN}"
       - name: Deploy get-stats cloud function
         run: gcloud functions deploy get-stats --entry-point getStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-stats-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated
       - name: Deploy endpoints services proxy
