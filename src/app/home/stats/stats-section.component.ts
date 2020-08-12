@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {StatsService, Stat}
+import {Observable} from 'rxjs';
+import {StatsService, Stat, GetStatsResponse}
   from '../../services/stats/stats.service';
 
-const numOfStatsToDisplay = 5;
+const numOfStatsToDisplay = 4;
 
 @Component({
   selector: 'app-stats-section',
@@ -10,13 +11,18 @@ const numOfStatsToDisplay = 5;
   styleUrls: ['./stats-section.component.css']
 })
 export class StatsSectionComponent implements OnInit {
+  manualStats: Observable<GetStatsResponse>;
+  autoStats: Observable<GetStatsResponse>;
   stats: Stat[] = [];
   visibleStats: Stat[] = [];
   updatedDate: Date;
   private tempStats: Stat[] = [];
   private responsesLeft = 2;
 
-  constructor(private statsService: StatsService) {}
+  constructor(private statsService: StatsService) {
+    this.manualStats = this.statsService.getManualStats();
+    this.autoStats = this.statsService.getAutoStats();
+  }
 
   populateRandomStats(): void {
     this.visibleStats = [];
@@ -32,16 +38,13 @@ export class StatsSectionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const manual = this.statsService.getManualStats();
-    const auto = this.statsService.getAutoStats();
-
-    manual.subscribe(statsResponse => {
+    this.manualStats.subscribe(statsResponse => {
       this.stats.push(...statsResponse.stats);
       if (--this.responsesLeft == 0)
         this.populateRandomStats();
     });
 
-    auto.subscribe(statsResponse => {
+    this.autoStats.subscribe(statsResponse => {
       this.updatedDate = new Date(statsResponse.dateUpdated);
       this.stats.push(...statsResponse.stats);
       if (--this.responsesLeft == 0)
