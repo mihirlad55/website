@@ -3,11 +3,6 @@
   to {transform: rotate(360deg);}
 }
 
-section {
-  padding: 100px 0;
-  background-color: var(--primary-color-1);
-}
-
 .container {
   max-width: 1300px;
   margin: auto;
@@ -80,6 +75,10 @@ section {
   color: var(--secondary-color-1);
   font: 1.3em 'Source Sans Pro', 'Helvetica';
   padding: 20px;
+}
+
+app-stat {
+  flex: 1;
 }
 
 @media screen and (max-width: 600px) {

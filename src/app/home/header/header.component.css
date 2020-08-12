@@ -1,13 +1,4 @@
-header {
-  height: 100vh;
-  width: 100%;
-  background-color: var(--primary-color-1);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-header div {
+div {
   vertical-align: middle;
   display: flex;
   flex-grow: 5;
@@ -16,20 +7,20 @@ header div {
   justify-content: center;
 }
 
-#intro {
+.intro {
   display: block;
   font: bold 8em 'Liberation Mono', 'Courier New';
   text-align: center;
   color: var(--secondary-color-1);
-  transition: ease-in 1s;
+  transition: ease-in 0.2s;
 }
 
-#occupation {
+.occupation {
   display: block;
   font: bold 4em 'Liberation Mono', 'Courier New';
   text-align: center;
   color: var(--secondary-color-1);
-  transition: ease-in 1s;
+  transition: ease-in 0.2s;
 }
 
 .down-arrow-link {
@@ -44,21 +35,23 @@ header div {
 }
 
 ul {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
-  text-align: center;
+  flex-grow: 1;
+  max-height: 175px;
 }
 
 ul li {
-  display: inline;
-  padding: 20px;
-  text-align: center;
-  vertical-align: middle;
+  display: block;
+  padding: 10px;
 }
 
 ul li a {
+  display: block;
   padding: 10px;
-  display: inline-block;
   border-radius: 50%;
 }
 
@@ -76,12 +69,22 @@ app-anchor-preview {
   position: fixed;
 }
 
-@media screen and (max-width: 600px) {
-  #intro {
-    font-size: 6em;
+@media screen and (max-width: 1200px) {
+  .intro {
+    font-size: 10vw;
   }
 
-  #occupation {
+  .occupation {
+    font-size: 5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    font-size: 4.6em;
+  }
+
+  .occupation {
     font-size: 2em;
   }
 }

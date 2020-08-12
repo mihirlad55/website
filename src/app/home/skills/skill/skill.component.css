@@ -1,10 +1,10 @@
-div app-webp {
+app-webp {
   display: block;
   height: 100px;
   margin: auto;
 }
 
-div h2 {
+h2 {
   padding: 5px;
   margin-top: 5px;
   font: 1.2em 'Liberation Mono', 'Courier New';

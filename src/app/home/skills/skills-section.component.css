@@ -1,8 +1,3 @@
-section {
-  padding: 100px 0;
-  background-color: var(--primary-color-2);
-}
-
 .container {
   max-width: 1300px;
   margin: auto;
@@ -39,11 +34,10 @@ section {
 }
 
 .skills-container app-skill {
-  flex: 0 0 25%;
+  width: 150px;
   padding: 10px;
   margin: 40px;
-  max-width: 150px;
-  border: solid 1px var(--secondary-color-1);
+  background-color: #00000023;
 }
 
 @media screen and (max-width: 600px) {
@@ -53,5 +47,9 @@ section {
 
   .heading-container p {
     font-size: 1em;
+  }
+
+  .skills-container app-skill {
+    margin: 20px;
   }
 }
