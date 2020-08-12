@@ -1,6 +1,3 @@
-<div>
-  <app-webp type="skills" [name]="this.skill.iconName" [alt]="this.skill.iconName"></app-webp>
-  <p *ngIf="this.skill.description.trim() !== ''">{{ this.skill.description }}</p>
-  <h2>{{ this.skill.name }}</h2>
-</div>
-
+<app-webp type="skills" [name]="this.skill.iconName" [alt]="this.skill.iconName"></app-webp>
+<p *ngIf="this.skill.description.trim() !== ''">{{ this.skill.description }}</p>
+<h2>{{ this.skill.name }}</h2>

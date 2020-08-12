@@ -3,11 +3,6 @@
   to {transform: rotate(360deg);}
 }
 
-section {
-  padding: 100px 0;
-  background-color: var(--primary-color-1);
-}
-
 .container {
   max-width: 1300px;
   margin: auto;
