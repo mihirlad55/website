@@ -1,5 +1,5 @@
 <div>
-  <h2 [title]="this.stat.description">{{ this.stat.value | number }}</h2>
+  <app-count-up refreshRate="50" initialDelay="150" autoStart="true" speed="0.4" [value]="this.stat.value" [title]="this.stat.description"></app-count-up>
   <p>{{ this.stat.name }}</p>
 </div>
 

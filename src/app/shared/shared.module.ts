@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {TypewriterComponent} from './typewriter/typewriter.component';
 import {AnchorPreviewComponent} from './anchor-preview/anchor-preview.component';
 import {WebpComponent} from './webp/webp.component';
+import {CountUpComponent} from './count-up/count-up.component';
 import {PreviewableDirective} from '../directives/previewable/previewable.directive';
 
 @NgModule({
@@ -10,6 +11,7 @@ import {PreviewableDirective} from '../directives/previewable/previewable.direct
     TypewriterComponent,
     AnchorPreviewComponent,
     WebpComponent,
+    CountUpComponent,
     PreviewableDirective
   ],
   imports: [
@@ -19,6 +21,7 @@ import {PreviewableDirective} from '../directives/previewable/previewable.direct
     TypewriterComponent,
     AnchorPreviewComponent,
     WebpComponent,
+    CountUpComponent,
     PreviewableDirective
   ]
 })

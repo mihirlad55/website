@@ -8,7 +8,7 @@
   transition: 1s ease-in;
 }
 
-h2 {
+app-count-up {
   font: bold 5em 'Liberation Mono', 'Courier New';
   color: var(--secondary-color-1);
   transition: 1s ease-in;
@@ -25,7 +25,7 @@ p {
     min-width: 220px;
   }
 
-  h2 {
+  app-count-up {
     font-size: 3em;
   }
 
