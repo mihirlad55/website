@@ -1,6 +1,7 @@
 :host {
   padding: 15px;
-  min-width: 100px;
+  min-width: 375px;
+  max-width: 400px;
   margin: 35px;
   text-align: center;
   background-color: #00000023;
@@ -20,6 +21,10 @@ p {
 }
 
 @media screen and (max-width: 450px) {
+  :host {
+    min-width: 220px;
+  }
+
   h2 {
     font-size: 3em;
   }
