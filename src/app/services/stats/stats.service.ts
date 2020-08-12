@@ -4,7 +4,7 @@ import {catchError, tap} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 
 const manualStatsUrl = '/assets/json/stats.json'
-const getStatsUrl = 'https://api.mihirlad.com/get-stats';
+const getStatsUrl = 'https://us-central1-mihirlad-website.cloudfunctions.net/get-stats';
 
 export class Stat {
   name: string;
