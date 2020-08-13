@@ -32,19 +32,24 @@ export class Project {
   git: GitInfo;
 }
 
+export class GetProjectsResponse {
+  dateUpdated: Date;
+  projects: Project[];
+}
+
 const projectsUrl = 'https://us-central1-mihirlad-website.cloudfunctions.net/get-projects';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProjectsServiceService {
+export class ProjectsService {
   constructor(private http: HttpClient) {}
 
-  getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(projectsUrl).pipe(
+  getProjects(): Observable<GetProjectsResponse> {
+    return this.http.get<GetProjectsResponse>(projectsUrl).pipe(
       catchError((error: any) => {
         console.error(error);
-        return (of([]) as Observable<Project[]>);
+        return (of(new GetProjectsResponse()) as Observable<GetProjectsResponse>);
       })
     );
   }
