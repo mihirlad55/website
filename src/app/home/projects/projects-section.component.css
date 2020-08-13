@@ -26,6 +26,13 @@
   margin-top: 30px;
   max-width: 900px;
   margin: auto;
+  padding: 20px;
+}
+
+app-project {
+  display: block;
+  width: 100%;
+  height: 300px;
 }
 
 @media screen and (max-width: 600px) {

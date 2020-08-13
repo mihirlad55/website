@@ -11,6 +11,7 @@ import {ParallaxDirective} from '../directives/parallax/parallax.directive';
 import {StatsSectionComponent} from './stats/stats-section.component';
 import {StatComponent} from './stats/stat/stat.component';
 import {ProjectsSectionComponent} from './projects/projects-section.component';
+import { ProjectComponent } from './projects/project/project.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {ProjectsSectionComponent} from './projects/projects-section.component';
     ParallaxDirective,
     StatsSectionComponent,
     StatComponent,
-    ProjectsSectionComponent
+    ProjectsSectionComponent,
+    ProjectComponent
   ],
   imports: [
     CommonModule,
