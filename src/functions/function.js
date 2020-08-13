@@ -1,11 +1,9 @@
 const fs = require('fs');
-const escapeHtml = require('escape-html');
 const {Storage} = require('@google-cloud/storage');
 const {Octokit} = require('@octokit/rest');
 
 const GITHUB_USERNAME = 'mihirlad55';
 const BUCKET = 'mihirlad-data'
-const TMP_STATS_PATH = '/tmp/stats.json';
 const BUCKET_STATS_PATH = 'stats.json';
 const GITHUB_AUTH_TOKEN = process.env.GITHUB_AUTH_TOKEN;
 
@@ -14,17 +12,37 @@ const octokit = new Octokit({
 });
 const storage = new Storage();
 
-async function uploadStats(path) {
-  await storage.bucket(BUCKET).upload(path, {
+async function uploadJSON(json, destination) {
+  const file = storage.bucket(BUCKET).file(destination);
+  await file.save(JSON.stringify(json), {
     gzip: true,
     public: true,
-    destination: BUCKET_STATS_PATH,
     metadata: {
       cacheControl: 'public, max-age=86400',
       contentType: 'application/json'
     }
   });
 }
+
+async function downloadJSON(path, key) {
+  let dateUpdated;
+  const file = storage.bucket(BUCKET).file(BUCKET_STATS_PATH);
+
+  file.getMetadata((err, metadata, apiResponse) => {
+    dateUpdated = metadata.updated;
+  });
+
+  const [resp] = await file.download();
+  const json = JSON.parse(resp.toString('utf-8'));
+
+  const data = {
+    dateUpdated: dateUpdated,
+    key: json
+  }
+
+  return data;
+}
+
 
 async function getContributorStats(repo, owner, user) {
   let totalCommits = 0;
@@ -155,32 +173,16 @@ async function compileStats(username) {
 
 exports.updateStats = async (message, context) => {
   const stats = await compileStats(GITHUB_USERNAME);
-  const statsStr = JSON.stringify(stats);
-  console.log(statsStr);
 
-  fs.writeFileSync(TMP_STATS_PATH, statsStr);
-  console.log(`stats written to ${TMP_STATS_PATH}`);
-
-  await uploadStats(TMP_STATS_PATH);
-  console.log(`${TMP_STATS_PATH} uploaded to ${BUCKET}`)
+  await uploadJSON(stats, BUCKET_STATS_PATH);
+  console.log(`${stats} uploaded to ${BUCKET}:${BUCKET_STATS_PATH}`)
 };
 
-exports.getStats = (req, res) => {
-  let dateUpdated;
-  const file = storage.bucket(BUCKET).file(BUCKET_STATS_PATH);
+exports.getStats = async (req, res) => {
+  const stats = await downloadJSON(BUCKET_STATS_PATH, 'stats');
+  res.status(200).send(JSON.stringify(stats));
+  res.set('Access-Control-Allow-Origin', '*');
+};
 
-  file.getMetadata((err, metadata, apiResponse) => {
-    dateUpdated = metadata.updated;
-  });
 
-  file.download((err, contents) => {
-    // Allow cross-domain requests
-    const stats = JSON.parse(contents.toString('utf-8'));
-    const data = {
-      dateUpdated: dateUpdated,
-      stats: stats
-    };
-    res.set('Access-Control-Allow-Origin', '*');
-    res.status(200).send(JSON.stringify(data));
-  });
 };
