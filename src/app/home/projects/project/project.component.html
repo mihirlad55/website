@@ -1,2 +1,9 @@
-<h1>{{ this.project.name }}</h1>
-
+<div class="project-container">
+  <div class="project-content">
+    <h1>{{ this.project.name }}</h1>
+    <h2>{{ this.project.brief }}</h2>
+  </div>
+  <app-webp class="backdrop" *ngIf="this.project.imageName" type="projects" [name]="this.project.imageName">
+  </app-webp>
+  <div *ngIf="!this.project.imageName" class="backdrop">{{ this.textBackdrop }}</div>
+</div>

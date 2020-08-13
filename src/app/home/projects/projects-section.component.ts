@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, HostListener} from '@angular/core';
 import {ProjectsService, Project, GetProjectsResponse}
   from '../../services/projects/projects.service';
 
@@ -10,6 +10,8 @@ import {ProjectsService, Project, GetProjectsResponse}
 export class ProjectsSectionComponent implements OnInit {
   projects: Project[] = [];
   selectedProject: Project = null;
+  selectedProjectIndex: number = 0;
+  windowWidth: number = window.innerWidth;
 
   constructor(private projectsService: ProjectsService) {}
 
@@ -19,8 +21,29 @@ export class ProjectsSectionComponent implements OnInit {
       this.projects = res.projects.sort((a, b) => {
         return b.git.stars - a.git.stars;
       });
-      this.selectedProject = this.projects[0];
+      this.selectedProject = this.projects[this.selectedProjectIndex];
     });
+  }
+
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.windowWidth = window.innerWidth;
+  }
+
+  nextProject(): void {
+    if (this.selectedProjectIndex + 1 < this.projects.length)
+      this.selectedProjectIndex++;
+    else
+      this.selectedProjectIndex = 0;
+    this.selectedProject = this.projects[this.selectedProjectIndex];
+  }
+
+  prevProject(): void {
+    if (this.selectedProjectIndex - 1 > 0)
+      this.selectedProjectIndex--;
+    else
+      this.selectedProjectIndex = this.projects.length - 1;
+    this.selectedProject = this.projects[this.selectedProjectIndex];
   }
 
 }
