@@ -1,0 +1,450 @@
+[
+  {
+    "name": "Augmented Sports",
+    "id": "ar",
+    "brief": "An interactive augmented reality application that provides an innovative, immersive fan experience through insights into the game and a unique social experience.",
+    "fullDescription": "",
+    "startDate": "2019-10-27T00:03:56Z",
+    "endDate": "2019-10-27T00:03:56Z",
+    "imageName": "ar",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Arduino RC Car",
+    "id": "Arduino-RC-Car",
+    "brief": "A simple arduino-controlled RC car",
+    "fullDescription": "",
+    "startDate": "2017-06-18T21:02:03Z",
+    "endDate": "2017-07-07T15:00:53Z",
+    "imageName": "arduino-rc-car",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Arduino Ultrasonic Trackpad",
+    "id": "Arduino-Ultrasonic-Trackpad",
+    "brief": "A kind of trackpad that uses a grid of ultrasonic sensors to control your mouse.",
+    "fullDescription": "",
+    "startDate": "2017-06-19T01:05:08Z",
+    "endDate": "2017-07-07T15:07:19Z",
+    "imageName": "arduino-ultrasonic-trackpad",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Canvas Module Downloader",
+    "id": "canvas-module-downloader",
+    "brief": "Lightweight web scraping script to automatically download canvas modules",
+    "fullDescription": "",
+    "startDate": "2019-09-01T01:28:42Z",
+    "endDate": "2019-09-03T00:45:04Z",
+    "imageName": "canvas-module-downloader",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Codebyte",
+    "id": "codebyte",
+    "brief": "A collection of solutions to various problems on Codebyte",
+    "fullDescription": "",
+    "startDate": "2019-12-29T06:50:56Z",
+    "endDate": "2019-12-30T00:11:11Z",
+    "imageName": "codebyte",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Codewars",
+    "id": "codewars",
+    "brief": "A collection of solutions to various problems on Codewars",
+    "fullDescription": "",
+    "startDate": "2019-12-31T02:15:34Z",
+    "endDate": "2020-01-01T07:37:16Z",
+    "imageName": "codewars",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Custom Lemonbar",
+    "id": "custom-lemonbar",
+    "brief": "Custom lemonbar script for displaying a linux status bar",
+    "fullDescription": "",
+    "startDate": "2019-05-06T03:07:35Z",
+    "endDate": "2019-06-05T22:47:45Z",
+    "imageName": "custom-lemonbar",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Dotfiles",
+    "id": "dotfiles",
+    "brief": "Collection of configuration files for LadOS (Arch Linux rice)",
+    "fullDescription": "",
+    "startDate": "2019-05-09T22:38:25Z",
+    "endDate": null,
+    "imageName": "dotfiles",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Dracut LUKS TPM2 Module",
+    "id": "dracut-luks-tpm2",
+    "brief": "Dracut module to unseal TPM and retrieve password to pass to LUKS",
+    "fullDescription": "",
+    "startDate": "2020-05-21T05:19:59Z",
+    "endDate": "2020-06-12T20:59:19Z",
+    "imageName": "dracut-luks-tpm2",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "dwm",
+    "id": "dwm",
+    "brief": "My fork of the window manager dwm with various patches applied",
+    "fullDescription": "",
+    "startDate": "2019-06-26T05:29:42Z",
+    "endDate": null,
+    "imageName": "dwm",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "dwm Anybar Patch",
+    "id": "dwm-anybar",
+    "brief": "A patch for the window manager dwm that allows it to better manage external status bars",
+    "fullDescription": "",
+    "startDate": "2020-07-19T06:12:01Z",
+    "endDate": null,
+    "imageName": "dwm-anybar",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "dwm-ipc",
+    "id": "dwm-ipc",
+    "brief": "dwm-ipc is a patch for the window manager dwm that enables inter-process communication",
+    "fullDescription": "",
+    "startDate": "2020-06-22T19:30:00Z",
+    "endDate": null,
+    "imageName": "dwm-ipc",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "dwmipcpp",
+    "id": "dwmipcpp",
+    "brief": "A C++ client library for communication with an IPC-patched dwm",
+    "fullDescription": "",
+    "startDate": "2020-07-07T23:07:05Z",
+    "endDate": null,
+    "imageName": "dwmipcpp",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "LadOS",
+    "id": "LadOS",
+    "brief": "Install and setup scripts for LadOS (An Arch Linux Rice)",
+    "fullDescription": "",
+    "startDate": "2020-05-04T03:05:19Z",
+    "endDate": null,
+    "imageName": "lados",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Mastermind",
+    "id": "Mastermind",
+    "brief": "A command-line java version of the Mastermind board game.",
+    "fullDescription": "",
+    "startDate": "2017-07-07T14:53:14Z",
+    "endDate": "2017-07-07T14:54:47Z",
+    "imageName": "mastermind",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Multi Purpose Calculator",
+    "id": "MultiPurposeCalculator",
+    "brief": "A basic java calculator that can do BEDMAS, factorization, and solve unknowns for Linear and Quadratic equations.",
+    "fullDescription": "",
+    "startDate": "2017-07-07T14:36:26Z",
+    "endDate": "2017-07-07T14:45:56Z",
+    "imageName": "multi-purpose-calculator",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "NPSS News Android",
+    "id": "NPSSNewsAndroid",
+    "brief": "North Park Secondary School News mobile app",
+    "fullDescription": "",
+    "startDate": "2017-07-04T02:04:00Z",
+    "endDate": "2017-07-07T15:35:51Z",
+    "imageName": "npss-news-android",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Personal Website",
+    "id": "website",
+    "brief": "This is my personal website portfolio created in Angular and hosted on the Google Cloud Platform",
+    "fullDescription": "",
+    "startDate": "2020-07-31T20:39:00-0400",
+    "endDate": null,
+    "imageName": "website",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Polybar dwm Module",
+    "id": "polybar-dwm-module",
+    "brief": "A dwm module for the popular status bar polybar",
+    "fullDescription": "",
+    "startDate": "2020-07-07T21:36:46Z",
+    "endDate": null,
+    "imageName": "polybar-dwm-module",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Polybar Spotify Controls",
+    "id": "polybar-spotify-controls",
+    "brief": "My fork of polybar-spotify-controls with some fixes and improvements",
+    "fullDescription": "",
+    "startDate": "2019-06-22T04:04:42Z",
+    "endDate": "2020-01-09T04:24:17Z",
+    "imageName": "polybar-spotify-controls",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Polybar Spotify Module",
+    "id": "polybar-spotify-module",
+    "brief": "A collection of lightweight d-bus programs for use with a Polybar Spotify Module",
+    "fullDescription": "",
+    "startDate": "2020-04-11T01:26:18Z",
+    "endDate": null,
+    "imageName": "polybar-spotify-module",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Potion.vim",
+    "id": "potion.vim",
+    "brief": "Vim plugin for the potion programming language created as part of a vim tutorial",
+    "fullDescription": "",
+    "startDate": "2020-06-20T20:00:20Z",
+    "endDate": "2020-06-21T04:07:57Z",
+    "imageName": "potion.vim",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "st",
+    "id": "st",
+    "brief": "My fork of st (simple terminal) with additional patches applied",
+    "fullDescription": "",
+    "startDate": "2019-06-26T02:00:21Z",
+    "endDate": null,
+    "imageName": "st",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "surf",
+    "id": "surf",
+    "brief": "My fork of surf, a lightweight webkit2/GTK+ browser, with additional patches applied",
+    "fullDescription": "",
+    "startDate": "2019-08-17T01:48:52Z",
+    "endDate": "2019-08-17T22:17:19Z",
+    "imageName": "surf",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Titanic Survivors",
+    "id": "TitanicSurvivors",
+    "brief": "A data analytics project from the Titanic Survivors Kaggle dataset",
+    "fullDescription": "",
+    "startDate": "2018-10-15T03:25:26Z",
+    "endDate": "2018-10-28T19:50:41Z",
+    "imageName": "TitanicSurvivors",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Vex Skills Qualifications",
+    "id": "vex-skills-qualifications",
+    "brief": "A python script that scrapes RobotEvents and VEXDB to find list of teams that will qualify through the VEX skills challenge",
+    "fullDescription": "",
+    "startDate": "2020-03-02T05:51:34Z",
+    "endDate": "2020-03-04T20:38:15Z",
+    "imageName": "vex-skills-qualifications",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Who Wants to Be a Millionaire",
+    "id": "WhoWantsToBeAMillionaire",
+    "brief": "Simple Java-based command-line game that asks trivia questions.",
+    "fullDescription": "",
+    "startDate": "2017-07-07T14:50:02Z",
+    "endDate": "2017-07-07T14:50:36Z",
+    "imageName": "who-wants-to-be-a-millionaire",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "Xresources Emacs Plugin",
+    "id": "xresources-theme",
+    "brief": "A fork of xresources-theme with some modifications",
+    "fullDescription": "",
+    "startDate": "2019-12-24T05:36:33Z",
+    "endDate": "2019-12-24T05:37:00Z",
+    "imageName": "xresources-theme",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  }
+]
