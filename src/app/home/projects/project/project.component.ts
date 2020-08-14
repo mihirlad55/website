@@ -16,8 +16,16 @@ export class ProjectComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    this.textBackdrop = this.project.git.languages.join(' ').concat(' ');
-    while (this.textBackdrop.length < 500) {
+    if (this.project.git && this.project.git.languages)
+      this.textBackdrop = this.project.git.languages.join(' ').concat(' ');
+
+    if (this.project.languages)
+      this.textBackdrop += this.project.languages.join(' ').concat(' ');
+
+    if (this.project.tools)
+    this.textBackdrop += this.project.tools.join(' ').concat(' ');
+
+    while (this.textBackdrop.length < 600) {
       this.textBackdrop += this.textBackdrop;
     }
   }
