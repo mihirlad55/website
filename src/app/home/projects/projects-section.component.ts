@@ -19,7 +19,9 @@ export class ProjectsSectionComponent implements OnInit {
     this.projectsService.getProjects().subscribe((res: GetProjectsResponse) => {
       // Sort by most starred
       this.projects = res.projects.sort((a, b) => {
-        return b.git.stars - a.git.stars;
+        const bStars = (b.git ? b.git.stars : 0);
+        const aStars = (a.git ? a.git.stars : 0);
+        return bStars - aStars;
       });
       this.selectedProject = this.projects[this.selectedProjectIndex];
     });
