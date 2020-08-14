@@ -16,7 +16,6 @@ export class ProjectComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    this.project.imageName = '';
     this.textBackdrop = this.project.git.languages.join(' ').concat(' ');
     while (this.textBackdrop.length < 500) {
       this.textBackdrop += this.textBackdrop;

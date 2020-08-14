@@ -38,11 +38,14 @@ app-project {
 
 .arrow-container {
   cursor: pointer;
-  padding: 20px;
   transition: 0.3s ease-in;
   background-color: #00000055;
   display: flex;
   flex: 1;
+}
+
+.arrow-container img {
+  padding: 20px;
 }
 
 .arrow-container:hover {

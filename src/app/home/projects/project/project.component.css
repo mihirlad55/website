@@ -5,6 +5,7 @@
   height: 100%;
   background-color: #803636;
   text-align: center;
+  overflow: hidden;
 }
 
 .project-content {
@@ -14,6 +15,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .project-content:hover {
@@ -32,7 +34,7 @@ h2 {
   font: bold 1.5em 'Source Sans Pro', Helvetica;
 }
 
-div.backdrop {
+.backdrop {
   position: absolute;
   top: 0;
   font: bold 3em 'Liberation Mono', 'Courier New';
@@ -42,4 +44,9 @@ div.backdrop {
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 1;
+}
+
+app-webp.backdrop {
+  object-fit: cover;
 }
