@@ -3,7 +3,7 @@
 readonly BASE_DIR="$( readlink -f "$(dirname "$0")" )"
 readonly IMG_DIR="$BASE_DIR/../src/assets/img"
 
-pngs=("$IMG_DIR"/*/*.png)
+mapfile -t pngs < <(find "$IMG_DIR" -iname '*.png')
 
 for png in "${pngs[@]}"; do
   echo "Converting $png..."
