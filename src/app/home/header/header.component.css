@@ -63,6 +63,7 @@ ul li a:hover {
 
 ul li a app-webp {
   height: 40px;
+  display: block;
 }
 
 app-anchor-preview {

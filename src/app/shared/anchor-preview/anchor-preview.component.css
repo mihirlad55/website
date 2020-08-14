@@ -4,6 +4,7 @@
 
 app-webp {
   position: fixed;
+  display: block;
   z-index: 2;
   box-shadow: #00000047 0px 0px 30px 0px;
   transform-origin: bottom center;

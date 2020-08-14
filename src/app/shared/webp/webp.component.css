@@ -1,9 +1,9 @@
 :host {
-  display: block;
+  display: inherit;
 }
 
 picture {
-  display: block;
+  display: inherit;
   height: inherit;
   width: inherit;
   max-width: inherit;
@@ -12,7 +12,7 @@ picture {
 }
 
 picture img {
-  display: block;
+  display: inherit;
   height: inherit;
   width: inherit;
   max-width: inherit;
