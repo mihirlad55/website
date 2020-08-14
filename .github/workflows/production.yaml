@@ -63,10 +63,10 @@ jobs:
       - name: Deploy dispatch.yaml
         run: gcloud app deploy dispatch.yaml
       - name: Deploy update-stats cloud function
-        run: gcloud functions deploy update-stats --entry-point updateStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-stats' --service-account='update-stats-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN_SECRET_NAME=${GITHUB_AUTH_TOKEN_SECRET_PATH}"
+        run: gcloud functions deploy update-stats --entry-point updateStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-stats' --service-account='update-stats-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN_SECRET_NAME=${GITHUB_AUTH_TOKEN_SECRET_NAME}"
       - name: Deploy get-stats cloud function
         run: gcloud functions deploy get-stats --entry-point getStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-stats-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated
       - name: Deploy update-projects cloud function
-        run: gcloud functions deploy update-projects --entry-point updateProjects --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-projects' --service-account='update-projects-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN_SECRET_NAME=${GITHUB_AUTH_TOKEN_SECRET_PATH},BASE_PROJECTS_URL=https://mihirlad.com/assets/json/projects.json"
+        run: gcloud functions deploy update-projects --entry-point updateProjects --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-projects' --service-account='update-projects-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN_SECRET_NAME=${GITHUB_AUTH_TOKEN_SECRET_NAME},BASE_PROJECTS_URL=https://mihirlad.com/assets/json/projects.json"
       - name: Deploy get-projects cloud function
         run: gcloud functions deploy get-projects --entry-point getProjects --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-projects-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated
