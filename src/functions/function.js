@@ -259,7 +259,7 @@ exports.updateProjects = async (message, context) => {
 
   let projects = await getBaseProjects();
   for (let p of projects) {
-    if (p.git.domain && p.git.owner && p.id)
+    if (p.git && p.git.domain && p.git.owner && p.id)
       p.git = await getGitProjectInfo(p.git.domain, p.git.owner, p.id,
         GITHUB_USERNAME);
   }
