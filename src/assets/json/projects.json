@@ -1,14 +1,13 @@
 [
   {
-    "name": "Augmented Sports",
-    "id": "ar",
-    "brief": "An interactive augmented reality application that provides an innovative, immersive fan experience through insights into the game and a unique social experience.",
+    "name": "Announcement App",
+    "id": "announcement-app",
+    "brief": "North Park Secondary School announcement web app",
     "fullDescription": "",
-    "startDate": "2019-10-27T00:03:56Z",
-    "endDate": "2019-10-27T00:03:56Z",
-    "imageName": "ar",
+    "startDate": "2019-06-08T21:27:53Z",
+    "endDate": "2019-06-08T21:31:16Z",
+    "imageName": "announcement-app",
     "languages": [],
-    "tools": [],
     "tags": [],
     "git": {
       "domain": "github",
@@ -64,13 +63,13 @@
     }
   },
   {
-    "name": "Codebyte",
-    "id": "codebyte",
-    "brief": "A collection of solutions to various problems on Codebyte",
+    "name": "Coderbyte",
+    "id": "coderbyte",
+    "brief": "A collection of solutions to various problems on Coderbyte",
     "fullDescription": "",
     "startDate": "2019-12-29T06:50:56Z",
     "endDate": "2019-12-30T00:11:11Z",
-    "imageName": "codebyte",
+    "imageName": "coderbyte",
     "languages": [],
     "tools": [],
     "tags": [],
@@ -208,6 +207,21 @@
     }
   },
   {
+    "name": "Keypad Lock",
+    "id": "keypad-lock",
+    "brief": "A keypad lock constructed using only integrated circuits",
+    "fullDescription": "",
+    "startDate": "2018-05-01T00:00:00-04:00",
+    "endDate": "2018-06-04T00:00:00-04:00",
+    "imageName": "keypad-lock",
+    "languages": [],
+    "tools": [
+      "Proteus 7"
+    ],
+    "tags": [],
+    "git": null
+  },
+  {
     "name": "LadOS",
     "id": "LadOS",
     "brief": "Install and setup scripts for LadOS (An Arch Linux Rice)",
@@ -238,6 +252,19 @@
       "domain": "github",
       "owner": "mihirlad55"
     }
+  },
+  {
+    "name": "Mini Railroad Crossing",
+    "id": "mini-railroad-crossing",
+    "brief": "Mini railroad crossing lights controlled by integrated circuits",
+    "fullDescription": "",
+    "startDate": "2017-05-08T00:00:00-04:00",
+    "endDate": "2020-06-21T04:07:57Z",
+    "imageName": "mini-railroad-crossing",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": null
   },
   {
     "name": "Multi Purpose Calculator",
@@ -276,7 +303,7 @@
     "id": "website",
     "brief": "This is my personal website portfolio created in Angular and hosted on the Google Cloud Platform",
     "fullDescription": "",
-    "startDate": "2020-07-31T20:39:00-0400",
+    "startDate": "2020-07-31T20:39:00-04:00",
     "endDate": null,
     "imageName": "website",
     "languages": [],
@@ -352,6 +379,21 @@
     }
   },
   {
+    "name": "Skip The Edits",
+    "id": "skip-the-edits",
+    "brief": "A web app for crowd-sourced essay reviewing",
+    "fullDescription": "",
+    "startDate": "2019-06-08T21:20:44Z",
+    "endDate": "2019-06-08T21:23:08Z",
+    "imageName": "skip-the-edits",
+    "languages": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
     "name": "st",
     "id": "st",
     "brief": "My fork of st (simple terminal) with additional patches applied",
@@ -374,7 +416,7 @@
     "fullDescription": "",
     "startDate": "2019-08-17T01:48:52Z",
     "endDate": "2019-08-17T22:17:19Z",
-    "imageName": "surf",
+    "imageName": "",
     "languages": [],
     "tools": [],
     "tags": [],
@@ -390,7 +432,7 @@
     "fullDescription": "",
     "startDate": "2018-10-15T03:25:26Z",
     "endDate": "2018-10-28T19:50:41Z",
-    "imageName": "TitanicSurvivors",
+    "imageName": "",
     "languages": [],
     "tools": [],
     "tags": [],
@@ -400,13 +442,29 @@
     }
   },
   {
-    "name": "Vex Skills Qualifications",
+    "name": "VEX Skills Qualifications",
     "id": "vex-skills-qualifications",
     "brief": "A python script that scrapes RobotEvents and VEXDB to find list of teams that will qualify through the VEX skills challenge",
     "fullDescription": "",
     "startDate": "2020-03-02T05:51:34Z",
     "endDate": "2020-03-04T20:38:15Z",
-    "imageName": "vex-skills-qualifications",
+    "imageName": "",
+    "languages": [],
+    "tools": [],
+    "tags": [],
+    "git": {
+      "domain": "github",
+      "owner": "mihirlad55"
+    }
+  },
+  {
+    "name": "VEX In the Zone Robot",
+    "id": "viking-robotics-in-the-zone",
+    "brief": "Robot created for the In the Zone VEX Competition",
+    "fullDescription": "",
+    "startDate": "2017-09-11T17:49:00-04:00",
+    "endDate": "2018-04-28T03:15:00-04:00",
+    "imageName": "vex-in-the-zone",
     "languages": [],
     "tools": [],
     "tags": [],
@@ -438,7 +496,7 @@
     "fullDescription": "",
     "startDate": "2019-12-24T05:36:33Z",
     "endDate": "2019-12-24T05:37:00Z",
-    "imageName": "xresources-theme",
+    "imageName": "",
     "languages": [],
     "tools": [],
     "tags": [],
