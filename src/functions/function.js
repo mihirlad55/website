@@ -1,29 +1,65 @@
 const fs = require('fs');
-const escapeHtml = require('escape-html');
+const got = require('got');
+const {SecretManagerServiceClient} = require('@google-cloud/secret-manager');
 const {Storage} = require('@google-cloud/storage');
 const {Octokit} = require('@octokit/rest');
 
 const GITHUB_USERNAME = 'mihirlad55';
 const BUCKET = 'mihirlad-data'
-const TMP_STATS_PATH = '/tmp/stats.json';
 const BUCKET_STATS_PATH = 'stats.json';
-const GITHUB_AUTH_TOKEN = process.env.GITHUB_AUTH_TOKEN;
+const BUCKET_PROJECTS_PATH = 'projects.json';
+const GITHUB_AUTH_TOKEN_SECRET_NAME = process.env.GITHUB_AUTH_TOKEN_SECRET_NAME;
+const BASE_PROJECTS_URL = process.env.BASE_PROJECTS_URL;
 
-const octokit = new Octokit({
-  auth: GITHUB_AUTH_TOKEN
-});
-const storage = new Storage();
+var octokit;
 
-async function uploadStats(path) {
-  await storage.bucket(BUCKET).upload(path, {
+async function initializeOctokit() {
+  console.log(GITHUB_AUTH_TOKEN_SECRET_NAME);
+  octokit = new Octokit({
+    auth: await getSecret(GITHUB_AUTH_TOKEN_SECRET_NAME)
+  });
+}
+
+async function uploadJSON(json, destination) {
+  const storage = new Storage();
+  const file = storage.bucket(BUCKET).file(destination);
+  await file.save(JSON.stringify(json), {
     gzip: true,
     public: true,
-    destination: BUCKET_STATS_PATH,
     metadata: {
       cacheControl: 'public, max-age=86400',
       contentType: 'application/json'
     }
   });
+}
+
+async function downloadJSON(path, key) {
+  let dateUpdated;
+  const storage = new Storage();
+  const file = storage.bucket(BUCKET).file(path);
+
+  file.getMetadata((err, metadata, apiResponse) => {
+    dateUpdated = metadata.updated;
+  });
+
+  const [resp] = await file.download();
+  const json = JSON.parse(resp.toString('utf-8'));
+
+  const data = {
+    dateUpdated: dateUpdated,
+    [key]: json
+  }
+
+  return data;
+}
+
+async function getSecret(name) {
+  const client = new SecretManagerServiceClient();
+  const [accessResponse] = await client.accessSecretVersion({
+    name: name
+  })
+
+  return accessResponse.payload.data.toString('utf8');
 }
 
 async function getContributorStats(repo, owner, user) {
@@ -153,34 +189,86 @@ async function compileStats(username) {
   return stats;
 }
 
+async function getBaseProjects() {
+  try {
+    const resp = await got(BASE_PROJECTS_URL);
+    const projects = JSON.parse(resp.body);
+    console.log(projects);
+    return projects;
+  } catch (e) {
+    console.error(e.resp.body);
+  }
+}
+
+async function getGitProjectInfo(domain, owner, id, username) {
+  let gitInfo = {
+    domain: domain,
+    owner: owner,
+    projectUrl: `https://${domain}.com/${owner}/${id}`,
+    isFork: false,
+    description: '',
+    topics: [],
+    languages: [],
+    stars: 0,
+    forks: 0,
+    commits: 0,
+    additions: 0,
+    deletions: 0
+  };
+
+  if (domain === 'github') {
+    gitInfo.languages = await getRepoLanguages(id, owner);
+
+    const {data: repo} = await octokit.repos.get({owner: owner, repo: id});
+    gitInfo.stars = repo.stargazers_count;
+    gitInfo.forks = repo.forks_count;
+    gitInfo.topics = repo.topics;
+    gitInfo.description = (repo.description ? repo.description : '');
+    gitInfo.isFork = repo.fork;
+
+    const contributorStats = await getContributorStats(id, owner, username);
+    gitInfo.additions = contributorStats.totalAdditions;
+    gitInfo.deletions = contributorStats.totalDeletions;
+    gitInfo.commits = contributorStats.totalCommits;
+
+    const {data} = await octokit.repos.getAllTopics({owner: owner, repo: id});
+    gitInfo.topics = data.names;
+
+    return gitInfo;
+  } else if (domain === 'gitlab') {
+
+  }
+}
+
 exports.updateStats = async (message, context) => {
+  await initializeOctokit();
   const stats = await compileStats(GITHUB_USERNAME);
-  const statsStr = JSON.stringify(stats);
-  console.log(statsStr);
 
-  fs.writeFileSync(TMP_STATS_PATH, statsStr);
-  console.log(`stats written to ${TMP_STATS_PATH}`);
-
-  await uploadStats(TMP_STATS_PATH);
-  console.log(`${TMP_STATS_PATH} uploaded to ${BUCKET}`)
+  await uploadJSON(stats, BUCKET_STATS_PATH);
+  console.log(`${stats} uploaded to ${BUCKET}:${BUCKET_STATS_PATH}`)
 };
 
-exports.getStats = (req, res) => {
-  let dateUpdated;
-  const file = storage.bucket(BUCKET).file(BUCKET_STATS_PATH);
+exports.getStats = async (req, res) => {
+  const stats = await downloadJSON(BUCKET_STATS_PATH, 'stats');
+  res.set('Access-Control-Allow-Origin', '*');
+  res.status(200).send(JSON.stringify(stats));
+};
 
-  file.getMetadata((err, metadata, apiResponse) => {
-    dateUpdated = metadata.updated;
-  });
+exports.updateProjects = async (message, context) => {
+  await initializeOctokit();
 
-  file.download((err, contents) => {
-    // Allow cross-domain requests
-    const stats = JSON.parse(contents.toString('utf-8'));
-    const data = {
-      dateUpdated: dateUpdated,
-      stats: stats
-    };
-    res.set('Access-Control-Allow-Origin', '*');
-    res.status(200).send(JSON.stringify(data));
-  });
+  let projects = await getBaseProjects();
+  for (let p of projects) {
+    if (p.git && p.git.domain && p.git.owner && p.id)
+      p.git = await getGitProjectInfo(p.git.domain, p.git.owner, p.id,
+        GITHUB_USERNAME);
+  }
+  console.log(projects);
+  await uploadJSON(projects, BUCKET_PROJECTS_PATH);
+};
+
+exports.getProjects = async (req, res) => {
+  const projects = await downloadJSON(BUCKET_PROJECTS_PATH, 'projects');
+  res.set('Access-Control-Allow-Origin', '*');
+  res.status(200).send(JSON.stringify(projects));
 };
