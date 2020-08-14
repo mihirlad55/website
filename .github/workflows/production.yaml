@@ -38,7 +38,75 @@ jobs:
           name: dist
           path: ${{ github.workspace }}/dist/mihirlad
 
-  deploy_production:
+  deploy_update_stats_function:
+    name: Deploy update_stats cloud function
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup gcloud CLI
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.SA_KEY }}
+          project_id: ${{ secrets.PROJECT_ID }}
+      - name: Deploy update-stats cloud function
+        run: gcloud functions deploy update-stats --entry-point updateStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-stats' --service-account='update-stats-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN_SECRET_NAME=${GITHUB_AUTH_TOKEN_SECRET_NAME}"
+
+  deploy_get_stats_function:
+    name: Deploy get_stats cloud function
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup gcloud CLI
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.SA_KEY }}
+          project_id: ${{ secrets.PROJECT_ID }}
+      - name: Deploy get-stats cloud function
+        run: gcloud functions deploy get-stats --entry-point getStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-stats-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated
+
+  deploy_update_projects_function:
+    name: Deploy update_stats cloud function
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup gcloud CLI
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.SA_KEY }}
+          project_id: ${{ secrets.PROJECT_ID }}
+      - name: Deploy update-projects cloud function
+        run: gcloud functions deploy update-projects --entry-point updateProjects --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-projects' --service-account='update-projects-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN_SECRET_NAME=${GITHUB_AUTH_TOKEN_SECRET_NAME},BASE_PROJECTS_URL=https://mihirlad.com/assets/json/projects.json"
+
+  deploy_get_projects_function:
+    name: Deploy get_projects cloud function
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Setup gcloud CLI
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: '290.0.1'
+          service_account_key: ${{ secrets.SA_KEY }}
+          project_id: ${{ secrets.PROJECT_ID }}
+      - name: Deploy get-projects cloud function
+        run: gcloud functions deploy get-projects --entry-point getProjects --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-projects-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated
+
+  deploy_app_production:
     name: Deploy to production
     needs: build
     runs-on: ubuntu-latest
@@ -62,11 +130,3 @@ jobs:
         run: gcloud app deploy app.yaml
       - name: Deploy dispatch.yaml
         run: gcloud app deploy dispatch.yaml
-      - name: Deploy update-stats cloud function
-        run: gcloud functions deploy update-stats --entry-point updateStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-stats' --service-account='update-stats-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN_SECRET_NAME=${GITHUB_AUTH_TOKEN_SECRET_NAME}"
-      - name: Deploy get-stats cloud function
-        run: gcloud functions deploy get-stats --entry-point getStats --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-stats-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated
-      - name: Deploy update-projects cloud function
-        run: gcloud functions deploy update-projects --entry-point updateProjects --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-topic='update-projects' --service-account='update-projects-function@mihirlad-website.iam.gserviceaccount.com' --set-env-vars="GITHUB_AUTH_TOKEN_SECRET_NAME=${GITHUB_AUTH_TOKEN_SECRET_NAME},BASE_PROJECTS_URL=https://mihirlad.com/assets/json/projects.json"
-      - name: Deploy get-projects cloud function
-        run: gcloud functions deploy get-projects --entry-point getProjects --runtime=nodejs12 --source='src/functions' --timeout='60s' --trigger-http --service-account='get-projects-function@mihirlad-website.iam.gserviceaccount.com' --allow-unauthenticated
