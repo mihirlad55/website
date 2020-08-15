@@ -9,6 +9,8 @@
 }
 
 .project-content {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   width: 100%;
   z-index: 3;
@@ -28,6 +30,29 @@ h2 {
 h3 {
   color: var(--secondary-color-1);
   font: bold 1.5em 'Source Sans Pro', Helvetica;
+}
+
+.project-content-extra {
+  color: var(--secondary-color-1);
+}
+
+.content-placeholder {
+  flex: 1;
+}
+
+.stargazers-container, .forks-container {
+  font: bold 1.5em 'Source Sans Pro', Helvetica;
+  padding: 0 5px;
+}
+
+.stargazers-container img, .forks-container img {
+  width: 20px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.stargazers-container span, .forks-container span {
+  vertical-align: middle;
 }
 
 .backdrop {

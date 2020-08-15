@@ -10,6 +10,7 @@ import {Project} from '../../../services/projects/projects.service';
 export class ProjectComponent implements OnInit, OnChanges {
   @Input() project: Project;
   textBackdrop: string = '';
+  showFullContent: boolean = false;
   date: string = '';
 
   constructor() {}
