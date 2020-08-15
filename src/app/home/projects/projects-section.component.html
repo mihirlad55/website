@@ -7,19 +7,19 @@
   </div>
   <div class="projects-container">
     <div *ngIf="this.windowWidth > 600" class="arrow-container" (click)="this.prevProject()">
-      <img class="arrow" src="/assets/img/arrow_back_ios-black-48dp.svg" alt="Previous project">
+      <img class="arrow" src="/assets/img/icons/arrow_back_ios-black-48dp.svg" alt="Previous project">
     </div>
     <app-project *ngIf="this.selectedProject" [project]="this.selectedProject"></app-project>
     <div *ngIf="this.windowWidth > 600" class="arrow-container" (click)="this.nextProject()">
-      <img class="arrow" src="/assets/img/arrow_forward_ios-black-48dp.svg" alt="Next project">
+      <img class="arrow" src="/assets/img/icons/arrow_forward_ios-black-48dp.svg" alt="Next project">
     </div>
   </div>
   <ng-container *ngIf="this.windowWidth <= 600">
     <div class="arrow-container" (click)="this.prevProject()">
-      <img class="arrow" src="/assets/img/arrow_back_ios-black-48dp.svg" alt="Previous project">
+      <img class="arrow" src="/assets/img/icons/arrow_back_ios-black-48dp.svg" alt="Previous project">
     </div>
     <div class="arrow-container" (click)="this.nextProject()">
-      <img class="arrow" src="/assets/img/arrow_forward_ios-black-48dp.svg" alt="Next project">
+      <img class="arrow" src="/assets/img/icons/arrow_forward_ios-black-48dp.svg" alt="Next project">
     </div>
   </ng-container>
 </div>
