@@ -40,6 +40,20 @@ h3 {
   flex: 1;
 }
 
+.project-link {
+  display: inline-block;
+  transition: 0.3s ease-in;
+}
+
+.project-link app-webp {
+  width: 25px;
+  vertical-align: middle;
+}
+
+.project-link:hover {
+  transform: scale(1.1) translateY(-5px);
+}
+
 .stargazers-container, .forks-container {
   font: bold 1.5em 'Source Sans Pro', Helvetica;
   padding: 0 8px;
