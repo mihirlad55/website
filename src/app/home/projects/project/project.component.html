@@ -6,12 +6,12 @@
     <ng-container *ngIf="this.showFullContent">
       <div class="content-placeholder"></div>
       <div class="project-content-extra">
-        <span class="stargazers-container" *ngIf="this.project.git">
-          <img src="/assets/img/icons/grade-black-48dp.svg" alt="Star" title="Number of Stargazers">
+        <span *ngIf="this.project.git" class="stargazers-container" title="Number of Stargazers">
+          <img src="/assets/img/icons/grade-black-48dp.svg" alt="Star">
           <span>{{ this.project.git.stars }}</span>
         </span>
-        <span class="forks-container" *ngIf="this.project.git">
-          <img src="/assets/img/icons/github-fork.svg" alt="Fork" title="Number of Forks">
+        <span *ngIf="this.project.git" class="forks-container" title="Number of Forks">
+          <img src="/assets/img/icons/github-fork.svg" alt="Fork">
           <span>{{ this.project.git.forks }}</span>
         </span>
       </div>
