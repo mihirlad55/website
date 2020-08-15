@@ -14,6 +14,9 @@
           <img src="/assets/img/icons/github-fork.svg" alt="Fork">
           <span>{{ this.project.git.forks }}</span>
         </span>
+        <div class="tags-container">
+          <span *ngFor="let tag of this.tags">{{ tag }}</span>
+        </div>
       </div>
     </ng-container>
   </div>

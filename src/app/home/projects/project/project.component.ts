@@ -12,6 +12,7 @@ export class ProjectComponent implements OnInit, OnChanges {
   textBackdrop: string = '';
   showFullContent: boolean = false;
   date: string = '';
+  tags: Set<string> = new Set();
 
   constructor() {}
 
@@ -33,6 +34,7 @@ export class ProjectComponent implements OnInit, OnChanges {
     }
 
     this.updateProjectDateString();
+    this.updateTags();
   }
 
   updateProjectDateString(): void {
@@ -45,5 +47,26 @@ export class ProjectComponent implements OnInit, OnChanges {
     else if (start == end) this.date = start;
     else if (end == '') this.date = `${start} - Present`;
     else this.date = `${start} - ${end}`;
+  }
+
+  updateTags(): void {
+    this.tags = new Set();
+
+    if (this.project.languages)
+      for (const l of this.project.languages)
+        this.tags.add(l);
+
+    if (this.project.git && this.project.languages)
+      for (const l of this.project.git.languages)
+        this.tags.add(l);
+
+    if (this.project.tools)
+      for (const t of this.project.tools)
+        this.tags.add(t);
+
+    if (this.project.tags)
+      for (const t of this.project.tags)
+        this.tags.add(t);
+
   }
 }

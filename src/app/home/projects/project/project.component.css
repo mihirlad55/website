@@ -42,7 +42,7 @@ h3 {
 
 .stargazers-container, .forks-container {
   font: bold 1.5em 'Source Sans Pro', Helvetica;
-  padding: 0 5px;
+  padding: 0 8px;
 }
 
 .stargazers-container img, .forks-container img {
@@ -53,6 +53,20 @@ h3 {
 
 .stargazers-container span, .forks-container span {
   vertical-align: middle;
+}
+
+.tags-container {
+  margin: 5px 0;
+  word-break: break-word;
+}
+
+.tags-container span {
+  display: inline-block;
+  font: bold 1em 'Source Sans Pro', Helvetica;
+  padding: 4px 8px;
+  margin: 5px 5px;
+  background-color: var(--secondary-color-4);
+  white-space: pre;
 }
 
 .backdrop {
