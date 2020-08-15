@@ -9,6 +9,8 @@
 }
 
 .project-content {
+  display: flex;
+  flex-direction: column;
   padding: 30px;
   width: 100%;
   z-index: 3;
@@ -16,18 +18,69 @@
 }
 
 .project-content:hover {
-  background-color: #00000055;  
+  background-color: #00000055;
   transition: 0.3s ease-in;
-}
-
-h1 {
-  color: var(--secondary-color-1);
-  font: bold 3em 'Source Sans Pro', Helvetica;
 }
 
 h2 {
   color: var(--secondary-color-1);
+  font: bold 3em 'Source Sans Pro', Helvetica;
+}
+
+h3 {
+  color: var(--secondary-color-1);
   font: bold 1.5em 'Source Sans Pro', Helvetica;
+}
+
+.project-content-extra {
+  color: var(--secondary-color-1);
+}
+
+.content-placeholder {
+  flex: 1;
+}
+
+.project-link {
+  display: inline-block;
+  transition: 0.3s ease-in;
+}
+
+.project-link app-webp {
+  width: 25px;
+  vertical-align: middle;
+}
+
+.project-link:hover {
+  transform: scale(1.1) translateY(-5px);
+}
+
+.stargazers-container, .forks-container {
+  font: bold 1.5em 'Source Sans Pro', Helvetica;
+  padding: 0 8px;
+}
+
+.stargazers-container img, .forks-container img {
+  width: 20px;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.stargazers-container span, .forks-container span {
+  vertical-align: middle;
+}
+
+.tags-container {
+  margin: 5px 0;
+  word-break: break-word;
+}
+
+.tags-container span {
+  display: inline-block;
+  font: bold 1em 'Source Sans Pro', Helvetica;
+  padding: 4px 8px;
+  margin: 5px 5px;
+  background-color: var(--secondary-color-4);
+  white-space: pre;
 }
 
 .backdrop {
@@ -61,17 +114,17 @@ app-webp.backdrop::after {
 }
 
 @media screen and (max-width: 600px) {
-  h1 {
+  h2 {
     font-size: 2.25em;
   }
 
-  h2 {
+  h3 {
     font-size: 1.125em;
   }
 }
 
 @media screen and (max-width: 400px) {
-  h1, h2 {
+  h2, h3 {
     word-break: break-all;
   }
 

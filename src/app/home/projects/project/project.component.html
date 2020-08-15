@@ -1,7 +1,28 @@
-<div class="project-container">
+<div class="project-container" (mouseenter)="this.showFullContent = true" (mouseleave)="this.showFullContent = false">
   <div class="project-content">
-    <h1>{{ this.project.name }}</h1>
-    <h2>{{ this.project.brief }}</h2>
+    <h2>{{ this.project.name }}</h2>
+    <h3>{{ this.project.brief }}</h3>
+    <h3>{{ this.date }}</h3>
+    <ng-container *ngIf="this.showFullContent">
+      <div class="content-placeholder"></div>
+      <div class="project-content-extra">
+        <a *ngIf="this.project.git" class="project-link" [href]="this.project.git.projectUrl"
+          [title]="this.project.id">
+          <app-webp type="links" [name]="this.project.git.domain" [alt]="this.project.git.domain"></app-webp>
+        </a>
+        <span *ngIf="this.project.git" class="stargazers-container" title="Number of Stargazers">
+          <img src="/assets/img/icons/grade-black-48dp.svg" alt="Star">
+          <span>{{ this.project.git.stars }}</span>
+        </span>
+        <span *ngIf="this.project.git" class="forks-container" title="Number of Forks">
+          <img src="/assets/img/icons/github-fork.svg" alt="Fork">
+          <span>{{ this.project.git.forks }}</span>
+        </span>
+        <div class="tags-container">
+          <span *ngFor="let tag of this.tags">{{ tag }}</span>
+        </div>
+      </div>
+    </ng-container>
   </div>
   <app-webp class="backdrop" *ngIf="this.project.imageName" type="projects" [name]="this.project.imageName">
   </app-webp>
