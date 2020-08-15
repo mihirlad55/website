@@ -86,17 +86,17 @@ app-webp.backdrop::after {
 }
 
 @media screen and (max-width: 600px) {
-  h1 {
+  h2 {
     font-size: 2.25em;
   }
 
-  h2 {
+  h3 {
     font-size: 1.125em;
   }
 }
 
 @media screen and (max-width: 400px) {
-  h1, h2 {
+  h2, h3 {
     word-break: break-all;
   }
 
