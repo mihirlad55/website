@@ -29,7 +29,7 @@ jobs:
       - name: Install node dependencies
         run: npm install
       - name: Build
-        run: npm run ng build -- --prod --optimization=true
+        run: npm run ng build -c prod --optimization=true
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
