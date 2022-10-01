@@ -14,7 +14,6 @@ const BASE_PROJECTS_URL = process.env.BASE_PROJECTS_URL;
 var octokit;
 
 async function initializeOctokit() {
-  console.log(GITHUB_AUTH_TOKEN_SECRET_NAME);
   octokit = new Octokit({
     auth: await getSecret(GITHUB_AUTH_TOKEN_SECRET_NAME)
   });
@@ -66,11 +65,22 @@ async function getContributorStats(repo, owner, user) {
   let totalCommits = 0;
   let totalAdditions = 0;
   let totalDeletions = 0;
+  let data;
 
-  let {data} = await octokit.repos.getContributorsStats({
-    owner: owner,
-    repo: repo
-  });
+  while (true) {
+    let resp = await octokit.repos.getContributorsStats({
+      owner: owner,
+      repo: repo
+    });
+
+    if (resp.status === 202) {
+      console.log(`Got response 202 for ${owner}/${repo}. Trying again in 1s.`)
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    } else {
+      data = resp.data
+      break;
+    }
+  }
 
   for (const userData of data) {
     if (userData.author.login === user) {
