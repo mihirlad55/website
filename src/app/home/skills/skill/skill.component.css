@@ -1,7 +1,8 @@
 app-webp {
   display: block;
   height: 100px;
-  margin: auto;
+  max-width: 100px;
+  object-fit: contain;
 }
 
 h2 {
@@ -10,4 +11,11 @@ h2 {
   font: 1.2em 'Liberation Mono', 'Courier New';
   color: var(--secondary-color-1);
   text-align: center;
+}
+
+.skill-header-container {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
