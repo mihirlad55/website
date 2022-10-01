@@ -1,19 +1,19 @@
 {
-  "dateUpdated": "2020-08-09T03:02:00.176Z",
+  "dateUpdated": "2022-10-01T15:01:00.176Z",
   "stats": [
     {
       "name": "VEX World Appearances",
       "description": "Number of times my team qualified for VEX Worlds",
-      "value": "3"
+      "value": "5"
     },
     {
-      "name": "Semester GPA",
-      "description": "Latest semester's GPA",
-      "value": "4.0"
+      "name": "Cumulative GPA",
+      "description": "Graduating GPA",
+      "value": "3.93"
     },
     {
       "name": "Programming Languages",
-      "description": "Number of programming languages I am proficient in",
+      "description": "Number of programming languages I know",
       "value": "22"
     },
     {
@@ -34,7 +34,7 @@
     {
       "name": "Robots Created",
       "description": "Number of robots my team and I built/programmed/designed",
-      "value": "10"
+      "value": "15"
     }
   ]
 }
