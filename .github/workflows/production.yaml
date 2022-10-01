@@ -26,11 +26,11 @@ jobs:
       - name: Setup npm
         uses: actions/setup-node@v1
         with:
-          node-version: '12'
+          node-version: '16'
       - name: Install node dependencies
         run: npm install
       - name: Build
-        run: npm run ng build -- --prod --optimization=true
+        run: npm run ng build -c prod --optimization=true
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
@@ -46,7 +46,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - name: Setup gcloud CLI
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@v0
         with:
           version: '290.0.1'
           service_account_key: ${{ secrets.SA_KEY }}
@@ -63,7 +63,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - name: Setup gcloud CLI
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@v0
         with:
           version: '290.0.1'
           service_account_key: ${{ secrets.SA_KEY }}
@@ -80,7 +80,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - name: Setup gcloud CLI
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@v0
         with:
           version: '290.0.1'
           service_account_key: ${{ secrets.SA_KEY }}
@@ -97,7 +97,7 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - name: Setup gcloud CLI
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@v0
         with:
           version: '290.0.1'
           service_account_key: ${{ secrets.SA_KEY }}
@@ -120,7 +120,7 @@ jobs:
           name: dist
           path: dist/mihirlad
       - name: Setup gcloud CLI
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@v0
         with:
           version: '290.0.1'
           service_account_key: ${{ secrets.SA_KEY }}

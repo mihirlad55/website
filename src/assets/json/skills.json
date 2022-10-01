@@ -12,6 +12,18 @@
     "show": true
   },
   {
+    "name": "Organization",
+    "description": "",
+    "iconName": "organization",
+    "show": true
+  },
+  {
+    "name": "Creative Problem Solving",
+    "description": "",
+    "iconName": "creative-problem-solving",
+    "show": true
+  },
+  {
     "name": "Circuit Design",
     "description": "",
     "iconName": "circuit-design",
@@ -33,6 +45,54 @@
     "name": "Control Systems",
     "description": "",
     "iconName": "control-systems",
+    "show": true
+  },
+  {
+    "name": "Software Development",
+    "description": "",
+    "iconName": "software-development",
+    "show": true
+  },
+  {
+    "name": "Image Processing",
+    "description": "",
+    "iconName": "image-processing",
+    "show": true
+  },
+  {
+    "name": "ROS",
+    "description": "",
+    "iconName": "ros",
+    "show": true
+  },
+  {
+    "name": "C/C++",
+    "description": "",
+    "iconName": "c-cpp",
+    "show": true
+  },
+  {
+    "name": "Python",
+    "description": "",
+    "iconName": "python",
+    "show": true
+  },
+  {
+    "name": "Git",
+    "description": "",
+    "iconName": "git",
+    "show": true
+  },
+  {
+    "name": "STM32",
+    "description": "",
+    "iconName": "stm32",
+    "show": true
+  },
+  {
+    "name": "Linux",
+    "description": "",
+    "iconName": "linux",
     "show": true
   }
 ]
