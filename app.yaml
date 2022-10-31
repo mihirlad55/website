@@ -11,6 +11,12 @@ handlers:
   secure: always
   expiration: "1h"
 
+- url: /(github|gitlab|linkedin|meet)$
+  static_files: dist/mihirlad/index.html
+  upload: dist/mihirlad/index.html
+  secure: always
+  expiration: "1m"
+
 - url: /assets/json/(.*)
   static_files: dist/mihirlad/assets/json/\1
   upload: dist/mihirlad/assets/json/(.*)
